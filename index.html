@@ -9282,6 +9282,147 @@ body.theme-dark #ejercicios-faciles .easy-finish p{color:#c6e8dc}
 }
 </style>
 
+<style id="easy-hint-contrast-v31">
+/* Pistas de ejercicios: contraste alto y lectura clara */
+#ejercicios-faciles .easy-hint{
+  margin-top:14px;
+  border:1px solid #cbd5e1;
+  border-radius:14px;
+  background:#ffffff;
+  overflow:hidden;
+  box-shadow:0 5px 16px rgba(15,23,42,.055);
+}
+#ejercicios-faciles .easy-hint summary{
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:13px 15px;
+  font-weight:850;
+  color:#0f172a;
+  background:#f1f5f9;
+  border-bottom:1px solid transparent;
+  user-select:none;
+}
+#ejercicios-faciles .easy-hint summary::-webkit-details-marker{display:none}
+#ejercicios-faciles .easy-hint summary::marker{content:""}
+#ejercicios-faciles .easy-hint summary::before{
+  content:"💡";
+  display:grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  flex:0 0 28px;
+  border-radius:9px;
+  background:#dcfce7;
+  border:1px solid #86efac;
+  font-size:15px;
+}
+#ejercicios-faciles .easy-hint summary::after{
+  content:"Ver pista";
+  margin-left:auto;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#e2e8f0;
+  color:#334155;
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.02em;
+}
+#ejercicios-faciles .easy-hint[open] summary{
+  background:#ecfdf5;
+  border-bottom-color:#d1fae5;
+}
+#ejercicios-faciles .easy-hint[open] summary::after{
+  content:"Ocultar";
+  background:#d1fae5;
+  color:#065f46;
+}
+#ejercicios-faciles .easy-hint-body{
+  padding:14px 15px 15px;
+  color:#334155;
+  font-size:14px;
+  line-height:1.65;
+  background:#ffffff;
+}
+#ejercicios-faciles .easy-hint-body > :first-child{margin-top:0}
+#ejercicios-faciles .easy-hint-body > :last-child{margin-bottom:0}
+#ejercicios-faciles .easy-hint-body pre{
+  margin:0;
+  padding:15px 17px;
+  overflow:auto;
+  white-space:pre-wrap;
+  border:1px solid #1e293b;
+  border-radius:11px;
+  background:#0f172a !important;
+  color:#f1f5f9 !important;
+  font-family:"JetBrains Mono",Consolas,monospace;
+  font-size:13.5px;
+  line-height:1.7;
+  font-weight:550;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+#ejercicios-faciles .easy-hint-body pre *,
+#ejercicios-faciles .easy-hint pre code,
+#ejercicios-faciles .easy-hint pre span{
+  color:#f1f5f9 !important;
+  opacity:1 !important;
+  text-shadow:none !important;
+}
+#ejercicios-faciles .easy-hint-body code:not(pre code){
+  padding:2px 5px;
+  border-radius:6px;
+  background:#e2e8f0;
+  color:#0f172a;
+  font-weight:700;
+}
+body.theme-dark #ejercicios-faciles .easy-hint{
+  background:#0f172a;
+  border-color:#475569;
+  box-shadow:0 6px 18px rgba(0,0,0,.22);
+}
+body.theme-dark #ejercicios-faciles .easy-hint summary{
+  background:#172033;
+  color:#f8fafc;
+}
+body.theme-dark #ejercicios-faciles .easy-hint[open] summary{
+  background:#0f2b22;
+  border-bottom-color:#285c4c;
+}
+body.theme-dark #ejercicios-faciles .easy-hint summary::after{
+  background:#334155;
+  color:#e2e8f0;
+}
+body.theme-dark #ejercicios-faciles .easy-hint[open] summary::after{
+  background:#164e3d;
+  color:#d1fae5;
+}
+body.theme-dark #ejercicios-faciles .easy-hint-body{
+  background:#0f172a;
+  color:#cbd5e1;
+}
+body.theme-dark #ejercicios-faciles .easy-hint-body pre{
+  background:#020617 !important;
+  color:#f8fafc !important;
+  border-color:#334155;
+}
+body.theme-dark #ejercicios-faciles .easy-hint-body pre *,
+body.theme-dark #ejercicios-faciles .easy-hint pre code,
+body.theme-dark #ejercicios-faciles .easy-hint pre span{
+  color:#f8fafc !important;
+}
+body.theme-dark #ejercicios-faciles .easy-hint-body code:not(pre code){
+  background:#1e293b;
+  color:#f8fafc;
+}
+@media(max-width:560px){
+  #ejercicios-faciles .easy-hint summary{padding:12px}
+  #ejercicios-faciles .easy-hint-body{padding:12px}
+  #ejercicios-faciles .easy-hint-body pre{padding:13px;font-size:12.5px}
+}
+</style>
 
 <style id="mini-projects-v29">
 .mini-project-step{margin:28px 0 8px;border:1px solid color-mix(in srgb,var(--accent,#7c3aed) 38%,#cbd5e1);border-radius:18px;overflow:hidden;background:color-mix(in srgb,var(--card,#fff) 96%,var(--accent,#7c3aed) 4%);box-shadow:0 12px 32px rgba(15,23,42,.08)}
@@ -20362,7 +20503,7 @@ req.flush([
   <div class="easy-chip-row"><span class="easy-chip">HTML</span><span class="easy-chip">src/app/app.html</span><span class="easy-chip">5 min</span></div>
   <ol><li>Abre <code>src/app/app.html</code>.</li><li>Escribe un título <code>&lt;h1&gt;</code> con el nombre de tu aplicación.</li><li>Agrega un párrafo explicando para qué servirá.</li><li>Guarda y observa el cambio en el navegador.</li></ol>
   <div class="easy-result"><strong>Resultado esperado:</strong> ver un título grande y un párrafo escritos por ti.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>&lt;h1&gt;Mi primera app Angular&lt;/h1&gt;
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>&lt;h1&gt;Mi primera app Angular&lt;/h1&gt;
 &lt;p&gt;Estoy aprendiendo componentes.&lt;/p&gt;</pre></div></details>
 </article>
 
@@ -20371,7 +20512,7 @@ req.flush([
   <div class="easy-chip-row"><span class="easy-chip">HTML</span><span class="easy-chip">div</span><span class="easy-chip">8 min</span></div>
   <ol><li>Crea un <code>&lt;div&gt;</code> con clase <code>tarjeta</code>.</li><li>Dentro agrega nombre, correo y programa académico.</li><li>Usa al menos un <code>&lt;h2&gt;</code> y dos <code>&lt;p&gt;</code>.</li></ol>
   <div class="easy-result"><strong>Comprueba:</strong> toda la información debe quedar agrupada dentro de una sola tarjeta.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body">Piensa en la tarjeta como una caja que contiene varias etiquetas HTML relacionadas.</div></details>
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body">Piensa en la tarjeta como una caja que contiene varias etiquetas HTML relacionadas.</div></details>
 </article>
 
 <article class="easy-exercise-card">
@@ -20379,7 +20520,7 @@ req.flush([
   <div class="easy-chip-row"><span class="easy-chip">CSS</span><span class="easy-chip">src/app/app.css</span><span class="easy-chip">10 min</span></div>
   <ol><li>Selecciona la clase <code>.tarjeta</code>.</li><li>Agrega <code>padding</code>, <code>border</code> y <code>border-radius</code>.</li><li>Limita su ancho con <code>max-width</code>.</li><li>Prueba cambiar un valor y observa qué parte cambia.</li></ol>
   <div class="easy-result"><strong>Resultado esperado:</strong> la información debe verse como una tarjeta visual y no como texto suelto.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>.tarjeta {
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>.tarjeta {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -20392,7 +20533,7 @@ req.flush([
   <div class="easy-chip-row"><span class="easy-chip">CSS</span><span class="easy-chip">Flexbox</span><span class="easy-chip">10 min</span></div>
   <ol><li>Crea un contenedor alrededor de la tarjeta.</li><li>Aplica <code>display: flex</code>.</li><li>Usa <code>justify-content: center</code>.</li><li>Luego prueba <code>align-items: center</code> y explica la diferencia.</li></ol>
   <div class="easy-result"><strong>Comprueba:</strong> la tarjeta debe quedar centrada horizontalmente.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body">Recuerda: <code>justify-content</code> trabaja sobre el eje principal del contenedor flex.</div></details>
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body">Recuerda: <code>justify-content</code> trabaja sobre el eje principal del contenedor flex.</div></details>
 </article>
 
 <article class="easy-exercise-card">
@@ -20400,7 +20541,7 @@ req.flush([
   <div class="easy-chip-row"><span class="easy-chip">Angular</span><span class="easy-chip">Interpolación</span><span class="easy-chip">10 min</span></div>
   <ol><li>En <code>src/app/app.ts</code> crea una propiedad llamada <code>curso</code>.</li><li>Asigna el texto <code>'Angular desde cero'</code>.</li><li>En <code>app.html</code> muestra la propiedad usando <code>{{ curso }}</code>.</li></ol>
   <div class="easy-result"><strong>Resultado esperado:</strong> si cambias el valor en TypeScript, el texto del navegador también cambia.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>// app.ts
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>// app.ts
 curso = 'Angular desde cero';
 
 // app.html
@@ -20412,7 +20553,7 @@ curso = 'Angular desde cero';
   <div class="easy-chip-row"><span class="easy-chip">Angular</span><span class="easy-chip">Eventos</span><span class="easy-chip">10 min</span></div>
   <ol><li>Crea una propiedad <code>mensaje</code> con el valor <code>'Sin guardar'</code>.</li><li>Crea un método <code>guardar()</code> que cambie el mensaje a <code>'Guardado'</code>.</li><li>Conecta un botón al método mediante <code>(click)</code>.</li><li>Muestra <code>mensaje</code> debajo del botón.</li></ol>
   <div class="easy-result"><strong>Comprueba:</strong> el texto cambia únicamente después de pulsar el botón.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>&lt;button (click)="guardar()"&gt;Guardar&lt;/button&gt;</pre></div></details>
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>&lt;button (click)="guardar()"&gt;Guardar&lt;/button&gt;</pre></div></details>
 </article>
 
 <article class="easy-exercise-card">
@@ -20420,7 +20561,7 @@ curso = 'Angular desde cero';
   <div class="easy-chip-row"><span class="easy-chip">Angular</span><span class="easy-chip">@if</span><span class="easy-chip">10 min</span></div>
   <ol><li>Crea <code>mostrarAviso = true</code>.</li><li>En el HTML usa <code>@if</code> para mostrar un mensaje.</li><li>Cambia manualmente el valor a <code>false</code> y comprueba que desaparece.</li><li>Como mejora, agrega un botón que cambie el valor.</li></ol>
   <div class="easy-result"><strong>Aprendizaje:</strong> Angular decide si crea o no una parte de la interfaz según una condición.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>@if (mostrarAviso) {
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>@if (mostrarAviso) {
   &lt;p&gt;Bienvenido a la clase&lt;/p&gt;
 }</pre></div></details>
 </article>
@@ -20430,7 +20571,7 @@ curso = 'Angular desde cero';
   <div class="easy-chip-row"><span class="easy-chip">Angular</span><span class="easy-chip">@for</span><span class="easy-chip">12 min</span></div>
   <ol><li>Crea el arreglo <code>materias = ['Web', 'Bases de datos', 'Programación']</code>.</li><li>Recórrelo en el HTML con <code>@for</code>.</li><li>Muestra cada materia dentro de un <code>&lt;li&gt;</code>.</li><li>Agrega otra materia al arreglo y observa el resultado.</li></ol>
   <div class="easy-result"><strong>Comprueba:</strong> no debes escribir tres <code>&lt;li&gt;</code> manualmente.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>@for (materia of materias; track materia) {
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>@for (materia of materias; track materia) {
   &lt;li&gt;{{ materia }}&lt;/li&gt;
 }</pre></div></details>
 </article>
@@ -20440,7 +20581,7 @@ curso = 'Angular desde cero';
   <div class="easy-chip-row"><span class="easy-chip">Angular</span><span class="easy-chip">ngModel</span><span class="easy-chip">12 min</span></div>
   <ol><li>Crea una propiedad <code>nombre = ''</code>.</li><li>Agrega un <code>&lt;input&gt;</code>.</li><li>Conéctalo con <code>[(ngModel)]</code>.</li><li>Debajo muestra <code>Hola, {{ nombre }}</code>.</li></ol>
   <div class="easy-result"><strong>Resultado esperado:</strong> el saludo cambia mientras escribes, sin presionar ningún botón.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body">Si <code>ngModel</code> no funciona, revisa que <code>FormsModule</code> esté disponible en el componente o configuración que estás usando.</div></details>
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body">Si <code>ngModel</code> no funciona, revisa que <code>FormsModule</code> esté disponible en el componente o configuración que estás usando.</div></details>
 </article>
 
 <article class="easy-exercise-card">
@@ -20448,7 +20589,7 @@ curso = 'Angular desde cero';
   <div class="easy-chip-row"><span class="easy-chip">Angular</span><span class="easy-chip">String</span><span class="easy-chip">12 min</span></div>
   <ol><li>Reutiliza el input del ejercicio anterior.</li><li>Debajo muestra la cantidad de caracteres escritos.</li><li>Prueba con el campo vacío y luego con tu nombre completo.</li></ol>
   <div class="easy-result"><strong>Comprueba:</strong> el número debe aumentar o disminuir al mismo tiempo que escribes.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>&lt;p&gt;Caracteres: {{ nombre.length }}&lt;/p&gt;</pre></div></details>
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>&lt;p&gt;Caracteres: {{ nombre.length }}&lt;/p&gt;</pre></div></details>
 </article>
 
 <article class="easy-exercise-card">
@@ -20456,7 +20597,7 @@ curso = 'Angular desde cero';
   <div class="easy-chip-row"><span class="easy-chip">Angular</span><span class="easy-chip">[disabled]</span><span class="easy-chip">12 min</span></div>
   <ol><li>Crea una propiedad <code>nombre</code>.</li><li>Agrega un botón <strong>Continuar</strong>.</li><li>Deshabilítalo cuando <code>nombre.length === 0</code>.</li><li>Escribe algo y comprueba que el botón se habilita.</li></ol>
   <div class="easy-result"><strong>Aprendizaje:</strong> una propiedad HTML puede depender directamente de un valor TypeScript.</div>
-  <details class="easy-hint"><summary>▾ Pista</summary><div class="easy-hint-body"><pre>&lt;button [disabled]="nombre.length === 0"&gt;Continuar&lt;/button&gt;</pre></div></details>
+  <details class="easy-hint"><summary>Pista</summary><div class="easy-hint-body"><pre>&lt;button [disabled]="nombre.length === 0"&gt;Continuar&lt;/button&gt;</pre></div></details>
 </article>
 
 <article class="easy-exercise-card">
