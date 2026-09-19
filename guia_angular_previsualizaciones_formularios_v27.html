@@ -15673,16 +15673,104 @@ h1 {
   <div class="mini-project-body">
     <div class="mini-project-brief">
       <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
-      <div><span>Archivos</span><strong>src/app/</strong></div>
+      <div><span>Carpeta base</span><strong>src/app/</strong></div>
     </div>
-    <div class="mini-project-columns">
+
+    <div class="callout info" style="margin-top:16px">
+      <strong>Primero entiende esto:</strong>
+      <code>features</code>, <code>shared</code> y <code>services</code> no son palabras especiales de Angular.
+      Son carpetas que nosotros creamos para organizar mejor la aplicación.
+      <code>features</code> agrupa funcionalidades completas; en este proyecto tendremos la funcionalidad
+      <code>estudiantes</code>.
+    </div>
+
+    <h4>Opción recomendada · dejar que Angular CLI cree las carpetas</h4>
+    <p>Ubícate en la raíz del proyecto, donde está el archivo <code>angular.json</code>, y ejecuta:</p>
+
+    <div class="codebox">
+      <div class="codehead"><strong>Terminal</strong><button class="copy">Copiar</button></div>
+      <pre>ng g c features/estudiantes/lista-estudiantes --skip-tests
+ng g c features/estudiantes/formulario-estudiante --skip-tests
+ng g s services/estudiantes --skip-tests</pre>
+    </div>
+
+    <div class="callout success">
+      <strong>¿Qué hace Angular CLI aquí?</strong>
+      No necesitas crear primero <code>features</code> ni <code>estudiantes</code>.
+      Al escribir la ruta completa, Angular CLI crea automáticamente las carpetas que faltan.
+    </div>
+
+    <h4>Crear la carpeta <code>shared</code></h4>
+    <p>
+      <code>shared</code> se usa para elementos reutilizables en distintas partes de la aplicación,
+      por ejemplo un encabezado, un botón o una tarjeta genérica.
+      Puedes crearla desde VS Code:
+    </p>
+    <ol>
+      <li>Busca <code>src/app</code> en el explorador de archivos.</li>
+      <li>Haz clic derecho sobre <code>app</code>.</li>
+      <li>Selecciona <strong>New Folder / Nueva carpeta</strong>.</li>
+      <li>Escribe <code>shared</code>.</li>
+    </ol>
+
+    <p>O puedes crearla desde la terminal:</p>
+    <div class="codebox">
+      <div class="codehead"><strong>Terminal</strong><button class="copy">Copiar</button></div>
+      <pre>mkdir src/app/shared</pre>
+    </div>
+
+    <h4>Así debe quedar la estructura</h4>
+    <div class="codebox">
+      <div class="codehead"><strong>src/app/</strong></div>
+      <pre>src/app/
+├── features/
+│   └── estudiantes/
+│       ├── lista-estudiantes/
+│       │   ├── lista-estudiantes.ts
+│       │   ├── lista-estudiantes.html
+│       │   └── lista-estudiantes.css
+│       └── formulario-estudiante/
+│           ├── formulario-estudiante.ts
+│           ├── formulario-estudiante.html
+│           └── formulario-estudiante.css
+├── services/
+│   └── estudiantes.ts
+├── shared/
+├── app.ts
+├── app.html
+└── app.css</pre>
+    </div>
+
+    <div class="table-wrap" style="margin-top:16px">
+      <table>
+        <thead>
+          <tr><th>Carpeta</th><th>¿Qué guardar allí?</th><th>Ejemplo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>features/</code></td><td>Funcionalidades completas de la app.</td><td><code>features/estudiantes/</code></td></tr>
+          <tr><td><code>services/</code></td><td>Lógica compartida y acceso a datos.</td><td><code>estudiantes.ts</code></td></tr>
+          <tr><td><code>shared/</code></td><td>Componentes reutilizables en varias funcionalidades.</td><td>Header, botón, tarjeta genérica.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mini-project-columns" style="margin-top:16px">
       <div>
         <h4>Hazlo ahora</h4>
-        <ol><li>Crea features/estudiantes, shared y services.</li><li>Dentro de estudiantes prepara lista-estudiantes y formulario-estudiante.</li><li>No muevas archivos todavía: primero reconoce para qué servirá cada carpeta.</li></ol>
+        <ol>
+          <li>Ejecuta los dos comandos <code>ng g c</code> para crear las pantallas de estudiantes.</li>
+          <li>Ejecuta <code>ng g s services/estudiantes --skip-tests</code> para crear el servicio.</li>
+          <li>Crea <code>shared</code> desde VS Code o con <code>mkdir</code>.</li>
+          <li>Compara tu explorador de archivos con el árbol mostrado arriba.</li>
+        </ol>
       </div>
       <div class="mini-project-preview">
         <span class="mini-project-preview-label">Así sé que terminé</span>
-        <p>La estructura refleja responsabilidades y sabes dónde iría cada tipo de archivo.</p>
+        <p>
+          Dentro de <code>src/app</code> veo <code>features</code>, <code>services</code> y
+          <code>shared</code>, y dentro de <code>features/estudiantes</code> aparecen
+          <code>lista-estudiantes</code> y <code>formulario-estudiante</code>.
+        </p>
         <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
       </div>
     </div>
