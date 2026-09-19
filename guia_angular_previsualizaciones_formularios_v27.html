@@ -21176,19 +21176,40 @@ La meta no es copiar rápido: es poder explicar qué hace cada archivo.
 </div>
 
 <details class="final-zero-phase" open>
-<summary><span class="final-zero-number">1</span><span class="final-zero-phase-title"><strong>Crear el proyecto desde cero</strong><small>Node, Angular CLI y primer arranque</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">1</span><span class="final-zero-phase-title"><strong>Crear el proyecto desde cero</strong><small>Node, Angular CLI, routing y primer arranque</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
-<p>Abre una terminal en la carpeta donde quieras guardar tu proyecto y ejecuta:</p>
-<div class="codebox"><div class="codehead"><strong>Terminal</strong><button class="copy">Copiar</button></div>
-<pre>node --version
-npm --version
-ng version
+<p>Empieza en una carpeta donde quieras guardar el proyecto. Antes de crear Angular, verifica que Node.js y npm estén disponibles.</p>
 
-ng new gestor-estudiantes
+<div class="codebox"><div class="codehead"><strong>Terminal · comprobar herramientas</strong><button class="copy">Copiar</button></div>
+<pre>node --version
+npm --version</pre></div>
+
+<div class="callout info">
+<strong>¿Qué espero ver?</strong> Ambos comandos deben mostrar un número de versión. Si alguno no existe, instala primero Node.js y vuelve a abrir la terminal.
+</div>
+
+<h4>1. Comprueba Angular CLI</h4>
+<p>Ejecuta <code>ng version</code>. Si la terminal dice que <code>ng</code> no existe, instala Angular CLI y comprueba de nuevo:</p>
+<div class="codebox"><div class="codehead"><strong>Terminal</strong><button class="copy">Copiar</button></div>
+<pre>npm install -g @angular/cli
+ng version</pre></div>
+
+<h4>2. Crea el proyecto con routing y CSS</h4>
+<div class="codebox"><div class="codehead"><strong>Terminal</strong><button class="copy">Copiar</button></div>
+<pre>ng new gestor-estudiantes --routing --style=css --ssr=false
 cd gestor-estudiantes
 ng serve</pre></div>
-<div class="callout info"><strong>Cuando Angular pregunte:</strong> puedes aceptar CSS como formato de estilos y habilitar routing. Si aparece una pregunta sobre SSR, para este ejercicio puedes elegir no.</div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> abro <code>http://localhost:4200</code> y la aplicación inicial funciona sin errores.</div>
+
+<div class="callout success">
+<strong>¿Por qué usamos esas opciones?</strong>
+<code>--routing</code> prepara <code>app.routes.ts</code> y la configuración del Router; <code>--style=css</code> crea archivos CSS; <code>--ssr=false</code> mantiene este ejercicio centrado en una aplicación cliente sencilla.
+</div>
+
+<div class="callout warning">
+<strong>Si Angular CLI hace preguntas adicionales:</strong> para este ejercicio puedes conservar los valores por defecto. La guía usa componentes standalone y la convención moderna de nombres como <code>app.ts</code>.
+</div>
+
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> la terminal queda ejecutando <code>ng serve</code>, abro <code>http://localhost:4200</code> y la aplicación inicial funciona sin errores.</div>
 </div>
 </details>
 
@@ -21266,9 +21287,10 @@ también puedes hacer clic derecho sobre <code>src/app</code> en VS Code y elegi
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">3</span><span class="final-zero-phase-title"><strong>Crear el modelo Estudiante</strong><small>Definir la forma que tendrán los datos</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">3</span><span class="final-zero-phase-title"><strong>Crear el modelo Estudiante</strong><small>Editar el archivo generado y definir la forma de los datos</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
 <div class="final-zero-files"><code>src/app/models/estudiante.ts</code></div>
+<p>Este archivo ya fue creado en el paso anterior con <code>ng g i models/estudiante</code>. Ábrelo y <strong>reemplaza todo su contenido</strong> por lo siguiente:</p>
 <div class="codebox"><div class="codehead"><strong>estudiante.ts</strong><button class="copy">Copiar</button></div>
 <pre>export interface Estudiante {
   id: number;
@@ -21276,15 +21298,31 @@ también puedes hacer clic derecho sobre <code>src/app</code> en VS Code y elegi
   correo: string;
   programa: string;
 }</pre></div>
-<p><strong>Idea clave:</strong> la interfaz funciona como una plantilla. Si un estudiante no tiene alguno de estos datos, TypeScript puede avisarte antes de ejecutar la app.</p>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> entiendo por qué todos los estudiantes tendrán la misma estructura.</div>
+
+<div class="table-wrap" style="margin-top:14px">
+<table>
+<thead><tr><th>Parte</th><th>Qué significa</th></tr></thead>
+<tbody>
+<tr><td><code>interface Estudiante</code></td><td>Define la forma que debe tener un estudiante.</td></tr>
+<tr><td><code>id: number</code></td><td>Identificador numérico único.</td></tr>
+<tr><td><code>nombre: string</code></td><td>El nombre debe ser texto.</td></tr>
+<tr><td><code>correo: string</code></td><td>El correo se guardará como texto.</td></tr>
+<tr><td><code>programa: string</code></td><td>Programa académico del estudiante.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Idea clave:</strong> la interfaz no guarda estudiantes. Solo describe qué propiedades debe tener cada objeto para que TypeScript pueda detectar errores antes de ejecutar la aplicación.</p>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> el archivo existe en <code>models/</code> y puedo explicar por qué todos los estudiantes tendrán la misma estructura.</div>
 </div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">4</span><span class="final-zero-phase-title"><strong>Crear el servicio con el CRUD</strong><small>Guardar los datos en un solo lugar</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">4</span><span class="final-zero-phase-title"><strong>Crear el servicio con el CRUD</strong><small>Reemplazar el servicio generado y concentrar los datos</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
 <div class="final-zero-files"><code>src/app/services/estudiantes.ts</code></div>
+<p>El comando <code>ng g s services/estudiantes --skip-tests</code> ya creó este archivo. Ábrelo y <strong>reemplaza todo su contenido</strong> por el código de abajo. Aunque el CLI haya generado una clase inicial distinta, después de reemplazar el contenido usaremos el nombre <code>EstudiantesService</code> en toda la aplicación.</p>
+
 <div class="codebox"><div class="codehead"><strong>estudiantes.ts</strong><button class="copy">Copiar</button></div>
 <pre>import { Injectable, signal } from '@angular/core';
 import { Estudiante } from '../models/estudiante';
@@ -21330,15 +21368,32 @@ export class EstudiantesService {
     );
   }
 }</pre></div>
-<div class="callout success"><strong>Observa:</strong> el componente no tendrá que inventar cómo guardar o borrar datos. Esa responsabilidad queda concentrada en el servicio.</div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> puedo explicar qué hacen <code>crear()</code>, <code>actualizar()</code> y <code>eliminar()</code>.</div>
+
+<div class="table-wrap" style="margin-top:14px">
+<table>
+<thead><tr><th>Elemento</th><th>Qué hace aquí</th></tr></thead>
+<tbody>
+<tr><td><code>@Injectable({ providedIn: 'root' })</code></td><td>Permite usar una sola instancia del servicio desde otros componentes.</td></tr>
+<tr><td><code>signal&lt;Estudiante[]&gt;</code></td><td>Guarda la lista y avisa a Angular cuando cambia.</td></tr>
+<tr><td><code>asReadonly()</code></td><td>Los componentes pueden leer la lista sin modificarla directamente.</td></tr>
+<tr><td><code>crear()</code></td><td>Agrega un estudiante.</td></tr>
+<tr><td><code>actualizar()</code></td><td>Reemplaza el estudiante cuyo id coincide.</td></tr>
+<tr><td><code>eliminar()</code></td><td>Quita el estudiante indicado.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warning"><strong>Importante:</strong> estos datos viven solo en memoria. Si recargas el navegador, volverás a los dos estudiantes iniciales. Eso es esperado en esta versión básica; la persistencia se propone después como mejora.</div>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> guardo el archivo sin errores y puedo explicar qué hacen <code>crear()</code>, <code>actualizar()</code> y <code>eliminar()</code>.</div>
 </div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">5</span><span class="final-zero-phase-title"><strong>Crear las rutas</strong><small>Lista, nuevo estudiante y edición</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">5</span><span class="final-zero-phase-title"><strong>Crear y comprobar las rutas</strong><small>Lista, nuevo estudiante, edición y configuración del Router</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
-<div class="final-zero-files"><code>src/app/app.routes.ts</code></div>
+<div class="final-zero-files"><code>src/app/app.routes.ts</code><code>src/app/app.config.ts</code></div>
+
+<h4>1. Reemplaza el contenido de <code>app.routes.ts</code></h4>
 <div class="codebox"><div class="codehead"><strong>app.routes.ts</strong><button class="copy">Copiar</button></div>
 <pre>import { Routes } from '@angular/router';
 import { ListaEstudiantes } from './features/estudiantes/lista-estudiantes/lista-estudiantes';
@@ -21363,14 +21418,39 @@ export const routes: Routes = [
     component: FormularioEstudiante
   }
 ];</pre></div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> entiendo que <code>:id</code> representa el estudiante que quiero editar.</div>
+
+<div class="table-wrap" style="margin-top:14px">
+<table>
+<thead><tr><th>URL</th><th>Qué mostrará</th></tr></thead>
+<tbody>
+<tr><td><code>/</code></td><td>Redirige a <code>/estudiantes</code>.</td></tr>
+<tr><td><code>/estudiantes</code></td><td>Lista de estudiantes.</td></tr>
+<tr><td><code>/estudiantes/nuevo</code></td><td>Formulario vacío.</td></tr>
+<tr><td><code>/estudiantes/:id/editar</code></td><td>Formulario del estudiante cuyo id aparece en la URL.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>2. Comprueba que el Router esté registrado</h4>
+<p>Como creaste el proyecto con <code>--routing</code>, Angular normalmente deja esto configurado. Abre <code>src/app/app.config.ts</code> y verifica que existan <code>provideRouter</code>, <code>routes</code> y <code>provideRouter(routes)</code>. <strong>No borres otros providers que Angular haya generado.</strong></p>
+<div class="codebox"><div class="codehead"><strong>app.config.ts · fragmento que debes reconocer</strong></div>
+<pre>import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
+
+// Dentro de providers:
+provideRouter(routes)</pre></div>
+
+<div class="callout info"><strong>¿Qué significa <code>:id</code>?</strong> Es un parámetro variable. Por ejemplo, <code>/estudiantes/25/editar</code> significa que el formulario recibirá el id <code>25</code>.</div>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> las cuatro rutas están definidas y puedo localizar <code>provideRouter(routes)</code> en la configuración.</div>
 </div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">6</span><span class="final-zero-phase-title"><strong>Construir la pantalla principal</strong><small>RouterOutlet y navegación básica</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">6</span><span class="final-zero-phase-title"><strong>Construir la pantalla principal</strong><small>Entender RouterLink, RouterOutlet y reemplazar la vista inicial</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
 <div class="final-zero-files"><code>src/app/app.ts</code><code>src/app/app.html</code></div>
+<p>Estos archivos ya existen desde que ejecutaste <code>ng new</code>. Ahora vas a reemplazar su contenido para convertir el componente raíz en la estructura general del Gestor de estudiantes.</p>
+
 <div class="codebox"><div class="codehead"><strong>app.ts</strong><button class="copy">Copiar</button></div>
 <pre>import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
@@ -21382,6 +21462,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {}</pre></div>
+
+<div class="callout info">
+<strong>Antes de seguir:</strong> <code>RouterLink</code> permite navegar sin recargar toda la página y <code>RouterOutlet</code> marca el lugar donde Angular insertará el componente correspondiente a la URL actual.
+</div>
+
 <div class="codebox"><div class="codehead"><strong>app.html</strong><button class="copy">Copiar</button></div>
 <pre>&lt;header class="barra"&gt;
   &lt;a routerLink="/estudiantes"&gt;🎓 Gestor de estudiantes&lt;/a&gt;
@@ -21391,14 +21476,18 @@ export class App {}</pre></div>
 &lt;main class="contenedor"&gt;
   &lt;router-outlet /&gt;
 &lt;/main&gt;</pre></div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> el encabezado permanece y Angular cambia el contenido del <code>router-outlet</code>.</div>
+
+<div class="callout success"><strong>Lectura mental:</strong> la barra permanece visible; solo cambia lo que aparece dentro de <code>&lt;router-outlet /&gt;</code>.</div>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> la aplicación compila y al cambiar de ruta el encabezado permanece mientras cambia el contenido principal.</div>
 </div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">7</span><span class="final-zero-phase-title"><strong>Crear la lista y el buscador</strong><small>Signals, computed, @if y @for</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">7</span><span class="final-zero-phase-title"><strong>Crear la lista y el buscador</strong><small>Signals, computed, referencia del input, @if y @for</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
-<div class="final-zero-files"><code>lista-estudiantes.ts</code><code>lista-estudiantes.html</code></div>
+<div class="final-zero-files"><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts</code><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.html</code></div>
+<p>Los dos archivos fueron creados por Angular CLI en el paso 2. Reemplaza su contenido por los siguientes ejemplos.</p>
+
 <div class="codebox"><div class="codehead"><strong>lista-estudiantes.ts</strong><button class="copy">Copiar</button></div>
 <pre>import { Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -21433,6 +21522,19 @@ export class ListaEstudiantes {
     }
   }
 }</pre></div>
+
+<div class="table-wrap" style="margin-top:14px">
+<table>
+<thead><tr><th>Sintaxis</th><th>Cómo leerla</th></tr></thead>
+<tbody>
+<tr><td><code>inject(EstudiantesService)</code></td><td>Obtén la instancia del servicio para consultar y modificar datos.</td></tr>
+<tr><td><code>signal('')</code></td><td>Guarda el texto escrito en el buscador.</td></tr>
+<tr><td><code>computed(...)</code></td><td>Recalcula la lista filtrada cuando cambia el texto o la lista del servicio.</td></tr>
+<tr><td><code>confirm(...)</code></td><td>Pide confirmación al navegador antes de eliminar.</td></tr>
+</tbody>
+</table>
+</div>
+
 <div class="codebox"><div class="codehead"><strong>lista-estudiantes.html</strong><button class="copy">Copiar</button></div>
 <pre>&lt;section&gt;
   &lt;div class="titulo-fila"&gt;
@@ -21476,14 +21578,18 @@ export class ListaEstudiantes {
     &lt;/div&gt;
   }
 &lt;/section&gt;</pre></div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> puedo buscar, ver tarjetas, entrar a editar y eliminar un registro.</div>
+
+<div class="callout info"><strong>Qué aparece por primera vez:</strong> <code>#busqueda</code> es una referencia al input; <code>(input)</code> escucha lo que escribes; <code>@if</code> decide qué bloque mostrar; <code>@for</code> repite una tarjeta por estudiante; <code>[routerLink]</code> construye una ruta usando el id.</div>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> puedo buscar, ver tarjetas, entrar a editar y eliminar un registro sin errores.</div>
 </div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">8</span><span class="final-zero-phase-title"><strong>Crear el formulario de registro y edición</strong><small>ngModel + parámetro de ruta</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">8</span><span class="final-zero-phase-title"><strong>Crear el formulario de registro y edición</strong><small>FormsModule, ngModel, parámetro de ruta y navegación</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
-<div class="final-zero-files"><code>formulario-estudiante.ts</code><code>formulario-estudiante.html</code></div>
+<div class="final-zero-files"><code>src/app/features/estudiantes/formulario-estudiante/formulario-estudiante.ts</code><code>src/app/features/estudiantes/formulario-estudiante/formulario-estudiante.html</code></div>
+<p>Estos archivos también fueron creados en el paso 2. Reemplaza su contenido. El mismo componente servirá para <strong>crear</strong> cuando no exista id y para <strong>editar</strong> cuando la URL sí tenga id.</p>
+
 <div class="codebox"><div class="codehead"><strong>formulario-estudiante.ts</strong><button class="copy">Copiar</button></div>
 <pre>import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -21543,6 +21649,19 @@ export class FormularioEstudiante {
     this.router.navigate(['/estudiantes']);
   }
 }</pre></div>
+
+<div class="table-wrap" style="margin-top:14px">
+<table>
+<thead><tr><th>Elemento</th><th>Para qué lo usamos</th></tr></thead>
+<tbody>
+<tr><td><code>FormsModule</code></td><td>Habilita <code>ngModel</code> y <code>ngSubmit</code> en este componente standalone.</td></tr>
+<tr><td><code>ActivatedRoute</code></td><td>Lee el <code>id</code> que llega en la URL.</td></tr>
+<tr><td><code>Router</code></td><td>Permite volver a la lista desde TypeScript después de guardar.</td></tr>
+<tr><td><code>snapshot.paramMap.get('id')</code></td><td>Obtiene el valor del parámetro <code>:id</code>.</td></tr>
+</tbody>
+</table>
+</div>
+
 <div class="codebox"><div class="codehead"><strong>formulario-estudiante.html</strong><button class="copy">Copiar</button></div>
 <pre>&lt;section class="formulario-card"&gt;
   &lt;h1&gt;{{ id ? 'Editar estudiante' : 'Nuevo estudiante' }}&lt;/h1&gt;
@@ -21581,15 +21700,19 @@ export class FormularioEstudiante {
     &lt;/div&gt;
   &lt;/form&gt;
 &lt;/section&gt;</pre></div>
-<div class="callout warning"><strong>Error típico:</strong> olvidar <code>FormsModule</code> o el atributo <code>name</code> de cada input que usa <code>ngModel</code>.</div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> el mismo formulario sirve para registrar y para editar.</div>
+
+<div class="callout info"><strong>Cómo leer el formulario:</strong> <code>[(ngModel)]="nombre"</code> mantiene sincronizados el input y la propiedad TypeScript; <code>(ngSubmit)="guardar()"</code> ejecuta el método al enviar el formulario.</div>
+<div class="callout warning"><strong>Error típico:</strong> olvidar <code>FormsModule</code> o el atributo <code>name</code> en un input que usa <code>ngModel</code>. Si aparece “Can't bind to ngModel”, revisa primero esas dos cosas.</div>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> registrar crea un nuevo estudiante y editar carga los datos existentes, guarda los cambios y vuelve a la lista.</div>
 </div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">9</span><span class="final-zero-phase-title"><strong>Agregar estilos básicos</strong><small>Que el proyecto sea claro antes de hacerlo “bonito”</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">9</span><span class="final-zero-phase-title"><strong>Agregar estilos básicos</strong><small>Completar todas las clases usadas por la interfaz</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
 <div class="final-zero-files"><code>src/styles.css</code></div>
+<p>Hasta ahora usamos clases como <code>barra</code>, <code>contenedor</code>, <code>titulo-fila</code>, <code>lista</code>, <code>tarjeta</code>, <code>formulario-card</code> y <code>acciones</code>. Ahora sí les daremos estilo en un solo archivo global.</p>
+
 <div class="codebox"><div class="codehead"><strong>styles.css</strong><button class="copy">Copiar</button></div>
 <pre>* {
   box-sizing: border-box;
@@ -21625,10 +21748,24 @@ a {
 .barra {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   padding: 18px 24px;
   background: #172033;
   color: white;
+}
+
+.titulo-fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.lista {
+  display: grid;
+  gap: 12px;
 }
 
 .tarjeta,
@@ -21640,20 +21777,72 @@ a {
   border: 1px solid #e4e8ef;
 }
 
+.tarjeta {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+}
+
+.formulario-card {
+  max-width: 650px;
+  margin-inline: auto;
+}
+
+.formulario-card label {
+  display: block;
+  font-weight: 700;
+}
+
 input {
   width: 100%;
   padding: 11px 12px;
   margin: 6px 0 14px;
   border: 1px solid #cbd5e1;
   border-radius: 9px;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.acciones a,
+.acciones button,
+.titulo-fila &gt; a {
+  border: 0;
+  border-radius: 9px;
+  padding: 9px 12px;
+  background: #e9eef8;
+  color: #172033;
+}
+
+.acciones button,
+.titulo-fila &gt; a {
+  background: #2563eb;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .barra,
+  .titulo-fila,
+  .tarjeta {
+    align-items: stretch;
+    flex-direction: column;
+  }
 }</pre></div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> la aplicación se entiende visualmente también en una pantalla pequeña.</div>
+
+<div class="callout info"><strong>¿Por qué <code>src/styles.css</code>?</strong> Son estilos globales que pueden afectar al componente raíz y también a los componentes de lista y formulario. Más adelante podrías mover estilos específicos a cada archivo <code>.css</code>.</div>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> lista, formulario, navegación y botones se distinguen claramente y la interfaz sigue siendo usable en una pantalla pequeña.</div>
 </div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">10</span><span class="final-zero-phase-title"><strong>Probar el CRUD completo</strong><small>No entregues sin probar casos reales</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">10</span><span class="final-zero-phase-title"><strong>Probar el CRUD completo</strong><small>Verificar compilación, navegación y casos reales</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
+<p>Antes de probar el CRUD, confirma que <code>ng serve</code> sigue ejecutándose. Si lo cerraste, vuelve a la raíz del proyecto y ejecuta <code>ng serve</code>.</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Prueba</th><th>Qué debes hacer</th><th>Resultado esperado</th></tr></thead>
@@ -21663,11 +21852,15 @@ input {
 <tr><td>SEARCH</td><td>Buscar “María”.</td><td>Solo aparecen coincidencias.</td></tr>
 <tr><td>UPDATE</td><td>Editar el programa de María.</td><td>La tarjeta muestra el cambio.</td></tr>
 <tr><td>DELETE</td><td>Eliminar a María y confirmar.</td><td>Desaparece de la lista.</td></tr>
-<tr><td>EMPTY</td><td>Buscar un nombre inexistente.</td><td>Aparece el mensaje “No encontramos estudiantes”.</td></tr>
+<tr><td>EMPTY</td><td>Buscar un nombre inexistente.</td><td>Aparece “No encontramos estudiantes”.</td></tr>
+<tr><td>ROUTES</td><td>Usar Nuevo, Editar y Cancelar.</td><td>La URL cambia sin recargar toda la aplicación.</td></tr>
 </tbody>
 </table>
 </div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> las seis pruebas funcionan y no aparecen errores rojos en la consola del navegador.</div>
+
+<div class="callout warning"><strong>No confundas una recarga con un error:</strong> esta primera versión guarda los estudiantes en memoria. Si presionas F5, la lista vuelve a los datos iniciales. La aplicación está funcionando como fue diseñada; la persistencia se agrega como mejora opcional.</div>
+<div class="callout info"><strong>Si algo falla:</strong> revisa primero la terminal donde corre <code>ng serve</code> y luego la consola del navegador. Corrige el primer error rojo antes de continuar con los demás.</div>
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> las siete pruebas funcionan y no aparecen errores de compilación ni errores rojos durante el recorrido normal.</div>
 </div>
 </details>
 
