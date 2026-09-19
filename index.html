@@ -9282,6 +9282,30 @@ body.theme-dark #ejercicios-faciles .easy-finish p{color:#c6e8dc}
 }
 </style>
 
+
+<style id="mini-projects-v29">
+.mini-project-step{margin:28px 0 8px;border:1px solid color-mix(in srgb,var(--accent,#7c3aed) 38%,#cbd5e1);border-radius:18px;overflow:hidden;background:color-mix(in srgb,var(--card,#fff) 96%,var(--accent,#7c3aed) 4%);box-shadow:0 12px 32px rgba(15,23,42,.08)}
+.mini-project-step summary{cursor:pointer;list-style:none;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center}
+.mini-project-step summary::-webkit-details-marker{display:none}
+.mini-project-step summary strong{font-size:1.08rem;line-height:1.35}
+.mini-project-kicker{grid-column:1/-1;font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--accent,#7c3aed)}
+.mini-project-open{font-size:.84rem;font-weight:800;padding:7px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent,#7c3aed) 12%,transparent);color:var(--accent,#7c3aed)}
+.mini-project-step[open] .mini-project-open{opacity:.72}
+.mini-project-body{padding:0 20px 20px;border-top:1px solid color-mix(in srgb,var(--accent,#7c3aed) 18%,#e2e8f0)}
+.mini-project-brief{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.mini-project-brief>div{padding:12px 14px;border-radius:14px;background:rgba(148,163,184,.10)}
+.mini-project-brief span{display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;opacity:.72;margin-bottom:3px}
+.mini-project-brief strong{font-size:.96rem}
+.mini-project-columns{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);gap:16px;align-items:stretch}
+.mini-project-columns h4{margin:0 0 10px}
+.mini-project-columns ol{margin:0;padding-left:1.35rem}
+.mini-project-columns li+li{margin-top:7px}
+.mini-project-preview{border:1px dashed color-mix(in srgb,var(--accent,#7c3aed) 42%,#94a3b8);border-radius:14px;padding:15px;background:rgba(124,58,237,.045)}
+.mini-project-preview-label{font-size:.78rem;font-weight:850;text-transform:uppercase;letter-spacing:.04em;color:var(--accent,#7c3aed)}
+.mini-project-preview p{margin:8px 0 12px;line-height:1.55}
+.mini-project-checkline{font-size:.84rem;font-weight:700;opacity:.82}
+@media(max-width:760px){.mini-project-brief,.mini-project-columns{grid-template-columns:1fr}.mini-project-step summary{grid-template-columns:1fr}.mini-project-open{justify-self:start;margin-top:6px}}
+</style>
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden"><defs><symbol id="guide-icon-home" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol><symbol id="guide-icon-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></symbol><symbol id="guide-icon-data" viewBox="0 0 24 24"><path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"/></symbol><symbol id="guide-icon-angular" viewBox="0 0 24 24"><path d="m12 3 9 4-2 12-7 3-7-3L3 7Zm-5 13 5-10 5 10m-8-3h6"/></symbol><symbol id="guide-icon-app" viewBox="0 0 24 24"><path d="M3 3h7v7H3Zm11 0h7v7h-7ZM3 14h7v7H3Zm11 0h7v7h-7Z"/></symbol><symbol id="guide-icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol><symbol id="guide-icon-search" viewBox="0 0 24 24"><path d="M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></symbol><symbol id="guide-icon-moon" viewBox="0 0 24 24"><path d="M20.5 13a9 9 0 0 1-9.5-9.5A9 9 0 1 0 20.5 13"/></symbol><symbol id="guide-icon-sun" viewBox="0 0 24 24"><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol><symbol id="guide-icon-up" viewBox="0 0 24 24"><path d="m5 11 7-7 7 7M12 4v17"/></symbol><symbol id="guide-icon-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6Zm11-2h1"/></symbol><symbol id="guide-icon-focus" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol><symbol id="guide-icon-exit" viewBox="0 0 24 24"><path d="M3 8h5V3m8 0v5h5M8 21v-5H3m13 5v-5h5"/></symbol><symbol id="guide-icon-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol><symbol id="guide-icon-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></symbol></defs></svg>
@@ -9471,6 +9495,31 @@ edad = "veinte"; // TypeScript avisa del error</pre>
 </div>
 </div>
 </div>
+
+<details class="mini-project-step" data-mini-project="antes">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 1 de 35</span>
+    <strong>Planear la app antes de programar</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>ningún archivo todavía</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Escribe qué problema resolverá: registrar y consultar estudiantes.</li><li>Define tres pantallas: Inicio, Estudiantes y Nuevo estudiante.</li><li>Anota los datos mínimos de un estudiante: nombre, correo y programa.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Tienes un dibujo o lista simple de las 3 pantallas y los datos que manejará la app.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="fundamentals" id="html-desde-cero" style="--section-accent:#f59e0b">
 <div class="section-kicker">02A · HTML desde cero</div>
 <h2>HTML: aprender a construir la estructura antes de usar Angular</h2>
@@ -9602,7 +9651,32 @@ href="./contacto.html" </pre></div><div class="foundation-use">Úsalo para: recu
 &lt;div onclick="guardar()"&gt;Guardar&lt;/div&gt;</pre></div><div class="foundation-use">Úsalo para: interfaces accesibles por defecto.</div><div class="foundation-warning">Error típico: Recrear controles nativos con divs.</div></article><article class="foundation-concept"><h4>Foco de teclado</h4><p>Elementos interactivos deben poder usarse sin mouse.</p><div class="mental">Cómo pensarlo: Tab recorre controles enfocables.</div><div class="foundation-code"><pre>&lt;button&gt;Guardar&lt;/button&gt;
 &lt;a href="/ayuda"&gt;Ayuda&lt;/a&gt;</pre></div><div class="foundation-use">Úsalo para: usuarios de teclado.</div><div class="foundation-warning">Error típico: Quitar outline sin reemplazo visual.</div></article><article class="foundation-concept"><h4>Label accesible</h4><p>Cada campo debe tener un nombre comprensible.</p><div class="mental">Cómo pensarlo: label es la forma preferida para inputs.</div><div class="foundation-code"><pre>&lt;label for="nombre"&gt;Nombre&lt;/label&gt;
 &lt;input id="nombre"&gt;</pre></div><div class="foundation-use">Úsalo para: formularios.</div><div class="foundation-warning">Error típico: Depender únicamente del placeholder.</div></article><article class="foundation-concept"><h4>alt adecuado</h4><p>Describe función/contenido si la imagen transmite información.</p><div class="mental">Cómo pensarlo: Si es puramente decorativa puede usarse alt vacío.</div><div class="foundation-code"><pre>&lt;img src="grafica.png"
-     alt="Ventas aumentan de enero a marzo"&gt;</pre></div><div class="foundation-use">Úsalo para: contenido no textual.</div><div class="foundation-warning">Error típico: Escribir nombres de archivo como alt.</div></article></div></div></details></section><section data-aos="fade-up" data-course-group="fundamentals" id="css-desde-cero" style="--section-accent:#f59e0b"><div class="section-kicker">02B · CSS desde cero</div><h2>CSS explicado para entender los ejemplos de Angular</h2><p class="lead">No basta con copiar estilos. Aquí aprenderás qué significa cada propiedad CSS, qué efecto produce, cuándo conviene usarla y cómo se relaciona con los archivos de un componente Angular.</p><div class="section-study-strip" data-study-section="css-desde-cero">
+     alt="Ventas aumentan de enero a marzo"&gt;</pre></div><div class="foundation-use">Úsalo para: contenido no textual.</div><div class="foundation-warning">Error típico: Escribir nombres de archivo como alt.</div></article></div></div></details>
+<details class="mini-project-step" data-mini-project="html-desde-cero">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 2 de 35</span>
+    <strong>Construir el esqueleto de la pantalla</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>practica/index.html</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea un encabezado con el nombre “Gestor de estudiantes”.</li><li>Agrega un formulario con nombre, correo y programa.</li><li>Debajo crea una lista con dos estudiantes de ejemplo.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Ves una página sin estilos, pero con título, formulario y estudiantes claramente separados.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
+</section><section data-aos="fade-up" data-course-group="fundamentals" id="css-desde-cero" style="--section-accent:#f59e0b"><div class="section-kicker">02B · CSS desde cero</div><h2>CSS explicado para entender los ejemplos de Angular</h2><p class="lead">No basta con copiar estilos. Aquí aprenderás qué significa cada propiedad CSS, qué efecto produce, cuándo conviene usarla y cómo se relaciona con los archivos de un componente Angular.</p><div class="section-study-strip" data-study-section="css-desde-cero">
 <span class="section-group-badge">Fundamentos web</span>
 <div class="section-study-spacer"></div>
 <button data-study-action="review" title="Marcar para repasar" type="button">◐ Repasar</button>
@@ -10916,7 +10990,32 @@ opacity</pre>
 </div>
 </div>
 </div>
-</details></section><section data-aos="fade-up" data-course-group="fundamentals" id="javascript" style="--section-accent:#f59e0b">
+</details>
+<details class="mini-project-step" data-mini-project="css-desde-cero">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 3 de 35</span>
+    <strong>Dar estilo a la primera tarjeta</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>practica/styles.css</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Centra el contenido con un contenedor de ancho máximo.</li><li>Convierte cada estudiante en una tarjeta con padding, borde y border-radius.</li><li>Haz que el botón principal tenga buen tamaño y separación.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La misma página HTML ya parece una pequeña aplicación y se entiende mejor visualmente.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
+</section><section data-aos="fade-up" data-course-group="fundamentals" id="javascript" style="--section-accent:#f59e0b">
 <div class="section-kicker">02 · Base necesaria</div>
 <h2>JavaScript que debes saber antes de Angular</h2>
 <p style="margin-top:-4px;color:#94a3b8;font-size:13px">Fundamentos necesarios para entender el código que verás en componentes, servicios y formularios.</p>
@@ -11362,6 +11461,31 @@ const aprobados = estudiantes
 console.log(aprobados);</pre></div>
 </div></details>
 </div>
+
+<details class="mini-project-step" data-mini-project="javascript">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 4 de 35</span>
+    <strong>Agregar una búsqueda sencilla</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>practica/app.js</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea un arreglo con tres estudiantes.</li><li>Escribe una función que filtre por nombre usando filter().</li><li>Prueba la función desde console.log() con distintos textos.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes escribir un texto de prueba en el código y obtener solo los estudiantes que coinciden.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="fundamentals" id="typescript-desde-cero" style="--section-accent:#f59e0b">
 <div class="section-kicker">02C · TypeScript desde cero</div>
 <h2>TypeScript: entender el lenguaje que realmente escribe Angular</h2>
@@ -11778,7 +11902,32 @@ listar() {
 
 usuarios = signal&lt;Usuario[]&gt;([]);</code></pre></div>
 </div>
-</details></section><section data-aos="fade-up" data-course-group="webdata" id="apis-desde-cero" style="--section-accent:#0ea5e9">
+</details>
+<details class="mini-project-step" data-mini-project="typescript-desde-cero">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 5 de 35</span>
+    <strong>Crear el tipo Estudiante</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/models/estudiante.ts</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Define una interface Estudiante con id, nombre, correo y programa.</li><li>Crea un objeto que cumpla esa interface.</li><li>Intenta quitar un campo para observar cómo TypeScript avisa del error.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>TypeScript protege la forma de los datos antes de ejecutar la aplicación.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
+</section><section data-aos="fade-up" data-course-group="webdata" id="apis-desde-cero" style="--section-accent:#0ea5e9">
 <div class="section-kicker">02D · APIs desde cero</div>
 <h2>Consumir APIs desde cero: primero JavaScript, después Angular</h2>
 <p class="lead">Esta sección está diseñada para que el estudiante no copie llamadas HTTP sin comprenderlas. Cada tema explica qué significa el concepto, para qué sirve, cómo pensarlo, qué error evitar y cómo se conecta con el siguiente paso: URL → request → fetch/HttpClient → Response → status → JSON → estado de la interfaz → manejo de errores.</p><div class="section-study-strip" data-study-section="apis-desde-cero">
@@ -13065,6 +13214,31 @@ if (!response.ok) {
     <code>try</code>, <code>catch</code> y <code>return</code>.
   </div>
 </div>
+
+<details class="mini-project-step" data-mini-project="apis-desde-cero">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 6 de 35</span>
+    <strong>Traer estudiantes desde una API de práctica</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>practica/api.js</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Haz una petición GET con fetch a una API de ejemplo.</li><li>Convierte la respuesta con response.json().</li><li>Muestra en consola tres registros y captura errores con try/catch.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes explicar de dónde llegan los datos y qué sucede si la petición falla.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="webdata" id="interaccion-formularios-rutas" style="--section-accent:#0ea5e9">
 <div class="section-kicker">02E · Interacción práctica</div>
 <h2>Formularios, botones y rutas: de HTML a Angular</h2>
@@ -14635,6 +14809,31 @@ tab = "perfil"</code>
 </div>
 </div></div>
 </details>
+
+<details class="mini-project-step" data-mini-project="interaccion-formularios-rutas">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 7 de 35</span>
+    <strong>Simular el flujo de la app</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>practica/index.html + practica/app.js</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Agrega botones “Ver estudiantes” y “Nuevo estudiante”.</li><li>Haz que el formulario valide que nombre y correo no estén vacíos.</li><li>Muestra un mensaje de éxito al enviar datos válidos.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>El prototipo ya permite navegar visualmente entre acciones y validar un formulario básico.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="que-es" style="--section-accent:#dd0031">
 <div class="section-kicker">03 · Idea central</div>
 <h2>¿Qué es Angular?</h2>
@@ -14691,6 +14890,31 @@ tab = "perfil"</code>
 <div class="node green"><strong>DOM</strong><small>pantalla actualizada</small></div>
 </div>
 </div>
+
+<details class="mini-project-step" data-mini-project="que-es">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 8 de 35</span>
+    <strong>Convertir el prototipo en piezas Angular</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>papel o notas del proyecto</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Identifica qué parte será App, ListaEstudiantes y FormularioEstudiante.</li><li>Marca qué datos pertenecen a cada componente.</li><li>Dibuja con flechas qué componente contiene a cuál.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Tienes un árbol pequeño de componentes y entiendes por qué Angular divide la interfaz en piezas.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="mapa-angular" style="--section-accent:#dd0031">
 <div class="section-kicker">03B · Mapa maestro</div>
 <h2>Todos los conceptos esenciales de Angular</h2>
@@ -16101,6 +16325,31 @@ export class UsuariosApi {
 </tbody>
 </table>
 </div>
+
+<details class="mini-project-step" data-mini-project="mapa-angular">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 9 de 35</span>
+    <strong>Relacionar conceptos con la app</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>README.md o cuaderno</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Asocia componente con una pantalla o tarjeta.</li><li>Asocia servicio con el lugar donde estarán los datos.</li><li>Asocia router con el cambio entre Lista y Nuevo estudiante.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes señalar en tu proyecto dónde usarás componentes, servicios, rutas y formularios.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="angular-propio" style="--section-accent:#dd0031"><div class="section-kicker">03C · Lenguaje propio del framework</div><h2>Conceptos propios de Angular, explicados desde cero</h2><p class="lead">Esta sección reúne 87 conceptos y APIs que el estudiante reconocerá específicamente al trabajar con Angular. La meta es distinguir qué aporta Angular frente a lo que ya pertenece a JavaScript, TypeScript o HTML.</p><div class="section-study-strip" data-study-section="angular-propio">
 <span class="section-group-badge">Angular esencial</span>
 <div class="section-study-spacer"></div>
@@ -16538,6 +16787,31 @@ ng build</pre></div><div class="see-result angular-see-result v14"><div class="s
   <a href="https://angular.dev/guide/forms" rel="noopener" target="_blank">Forms</a> y
   <a href="https://angular.dev/guide/http" rel="noopener" target="_blank">HTTP</a>.
 </div>
+
+<details class="mini-project-step" data-mini-project="angular-propio">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 10 de 35</span>
+    <strong>Crear el primer componente real</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/estudiante-card/</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Genera un componente estudiante-card.</li><li>Pon dentro nombre, correo y programa de ejemplo.</li><li>Usa el selector del componente desde la pantalla principal.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La tarjeta aparece desde un componente separado y ya no está escrita directamente en App.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="instalacion" style="--section-accent:#dd0031">
 <div class="section-kicker">04 · Herramientas</div>
 <h2>Instalación paso a paso</h2>
@@ -16605,6 +16879,31 @@ XX.X.X</div>
 </tbody>
 </table>
 </div>
+
+<details class="mini-project-step" data-mini-project="instalacion">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 11 de 35</span>
+    <strong>Dejar listo el entorno</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>terminal</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Comprueba node --version y npm --version.</li><li>Instala Angular CLI si hace falta.</li><li>Ejecuta ng version y guarda una captura o anota las versiones.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Los tres comandos funcionan y puedes explicar qué herramienta aporta Node, npm y Angular CLI.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="crear" style="--section-accent:#dd0031">
 <div class="section-kicker">05 · Primer proyecto</div>
 <h2>Crear tu primera aplicación Angular</h2><div class="section-study-strip" data-study-section="crear">
@@ -16673,6 +16972,31 @@ XX.X.X</div>
 <div class="node green"><strong>localhost:4200</strong><small>ves la app</small></div>
 </div>
 </div>
+
+<details class="mini-project-step" data-mini-project="crear">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 12 de 35</span>
+    <strong>Crear el proyecto GestorEstudiantes</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>carpeta gestor-estudiantes/</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Ejecuta ng new gestor-estudiantes.</li><li>Entra a la carpeta del proyecto.</li><li>Inicia con ng serve y abre la dirección local.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La aplicación inicial de Angular abre en el navegador sin errores.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="hola" style="--section-accent:#dd0031">
 <div class="section-kicker">06 · Primera victoria</div>
 <h2>Hola Mundo paso a paso</h2>
@@ -16911,6 +17235,31 @@ h1 {
 <strong>Prueba importante:</strong> cambia el texto de <code>titulo</code> mientras <code>ng serve</code>
         sigue ejecutándose. El navegador debería actualizarse automáticamente.
       </div>
+
+<details class="mini-project-step" data-mini-project="hola">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 13 de 35</span>
+    <strong>Mostrar el nombre de la aplicación</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/app.html</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Reemplaza la pantalla inicial por un h1.</li><li>Escribe “Gestor de estudiantes”.</li><li>Agrega debajo una frase corta: “Mi primera app Angular”.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Al guardar, el navegador actualiza el título sin recargar manualmente.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="visual" style="--section-accent:#dd0031">
 <div class="section-kicker">06B · Resultado visual</div>
 <h2>¿Cómo se ve realmente cada concepto Angular?</h2>
@@ -17238,6 +17587,31 @@ aumentar() {
 <strong>Cómo estudiar esta sección:</strong> observa primero el resultado visual y después vuelve al código.
         Pregúntate qué dato aparece, qué evento lo cambia y qué parte del template se actualiza.
       </div>
+
+<details class="mini-project-step" data-mini-project="visual">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 14 de 35</span>
+    <strong>Crear un panel de estado</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/app.html + src/app/app.css</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Agrega una tarjeta que diga “Sistema listo”.</li><li>Añade un contador visual “0 estudiantes registrados”.</li><li>Dale un estilo sencillo para reconocer las dos zonas.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes señalar qué parte viene del HTML, cuál del CSS y cuál será dinámica después.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="estructura" style="--section-accent:#dd0031">
 <div class="section-kicker">07 · Orientación</div>
 <h2>Entender la estructura de carpetas</h2>
@@ -17393,6 +17767,31 @@ aumentar() {
         Angular CLI admite una convención de nombres clásica y una moderna. En la moderna el archivo puede ser
         simplemente <code>app.ts</code>. No significa que sea “otro Angular”.
       </div>
+
+<details class="mini-project-step" data-mini-project="estructura">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 15 de 35</span>
+    <strong>Crear las carpetas del proyecto</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea features/estudiantes, shared y services.</li><li>Dentro de estudiantes prepara lista-estudiantes y formulario-estudiante.</li><li>No muevas archivos todavía: primero reconoce para qué servirá cada carpeta.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La estructura refleja responsabilidades y sabes dónde iría cada tipo de archivo.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="rutas-archivos" style="--section-accent:#dd0031">
 <div class="section-kicker">07B · Ubicación de archivos</div>
 <h2>¿En qué carpeta está cada archivo?</h2>
@@ -17529,6 +17928,31 @@ ng g c pages/acerca</pre>
         verifica siempre la ruta que aparece encima del bloque de código. Si el archivo no existe todavía,
         créalo en esa carpeta o genera el componente/servicio con Angular CLI.
       </div>
+
+<details class="mini-project-step" data-mini-project="rutas-archivos">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 16 de 35</span>
+    <strong>Ubicar correctamente cada archivo</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Coloca el modelo Estudiante dentro de models.</li><li>Coloca el servicio dentro de services.</li><li>Comprueba las rutas de importación desde un componente.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes decir sin adivinar dónde viven el modelo, el servicio y los componentes.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="componentes" style="--section-accent:#dd0031">
 <div class="section-kicker">08 · Bloque fundamental</div>
 <h2>Componentes: la idea más importante</h2>
@@ -17678,6 +18102,31 @@ export class Saludo {
 <strong>Regla mental:</strong> crear un componente no lo muestra automáticamente. Debes colocarlo
         en el árbol de la aplicación, normalmente importándolo en un padre y usando su selector.
       </div>
+
+<details class="mini-project-step" data-mini-project="componentes">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 17 de 35</span>
+    <strong>Crear la tarjeta de estudiante</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/estudiante-card/</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Genera estudiante-card.</li><li>Diseña una tarjeta con nombre, correo y programa.</li><li>Importa y muestra dos tarjetas desde el componente padre.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La lista ya reutiliza el mismo componente visual más de una vez.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="binding" style="--section-accent:#dd0031">
 <div class="section-kicker">09 · Datos + interfaz</div>
 <h2>Binding: conectar TypeScript con HTML</h2>
@@ -17764,6 +18213,31 @@ cambiarEstado() {
 }</pre></div>
 </div></details>
 </div>
+
+<details class="mini-project-step" data-mini-project="binding">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 18 de 35</span>
+    <strong>Hacer dinámica la tarjeta</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>estudiante-card.ts + estudiante-card.html</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea propiedades nombre, correo y activo en TypeScript.</li><li>Muéstralas en HTML con interpolación.</li><li>Agrega un botón cuyo disabled dependa de una propiedad.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Cambiar un valor en TypeScript modifica lo que se ve sin editar manualmente el HTML.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="control" style="--section-accent:#dd0031">
 <div class="section-kicker">10 · Decisiones y listas</div>
 <h2>Control de flujo con <code>@if</code> y <code>@for</code></h2><div class="section-study-strip" data-study-section="control">
@@ -17818,6 +18292,31 @@ cambiarEstado() {
 <div class="node green"><strong>DOM</strong><small>3 elementos &lt;li&gt;</small></div>
 </div>
 </div>
+
+<details class="mini-project-step" data-mini-project="control">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 19 de 35</span>
+    <strong>Renderizar una lista y un estado vacío</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>lista-estudiantes.ts + lista-estudiantes.html</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea un arreglo de estudiantes.</li><li>Recórrelo con @for para mostrar una tarjeta por estudiante.</li><li>Usa @if para mostrar “No hay estudiantes” cuando el arreglo esté vacío.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La pantalla cambia correctamente entre lista con datos y estado vacío.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="forms" style="--section-accent:#dd0031">
 <div class="section-kicker">11 · Entrada de datos</div>
 <h2>Formulario básico con <code>ngModel</code></h2>
@@ -17875,6 +18374,31 @@ export class Formulario {
         Si aparece un error indicando que <code>ngModel</code> no es conocido, revisa primero que
         <code>FormsModule</code> esté importado en el componente que usa ese template.
       </div>
+
+<details class="mini-project-step" data-mini-project="forms">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 20 de 35</span>
+    <strong>Crear el formulario de nuevo estudiante</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>formulario-estudiante.ts + formulario-estudiante.html</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea nombre, correo y programa.</li><li>Conecta los inputs con [(ngModel)].</li><li>Muestra debajo una vista previa de lo que el estudiante está escribiendo.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Al escribir, la vista previa cambia inmediatamente y entiendes el two-way binding.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="signals" style="--section-accent:#dd0031">
 <div class="section-kicker">12 · Estado reactivo</div>
 <h2>Signals: una forma moderna de manejar estado</h2>
@@ -17930,6 +18454,31 @@ export class Contador {
         Observa los paréntesis: para <strong>leer</strong> un signal se usa <code>contador()</code>.
         Para modificarlo usamos <code>.set()</code> o <code>.update()</code>.
       </div>
+
+<details class="mini-project-step" data-mini-project="signals">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 21 de 35</span>
+    <strong>Contar estudiantes con Signals</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>lista-estudiantes.ts</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea un signal para la lista o para el total.</li><li>Muestra el total en la plantilla.</li><li>Agrega un estudiante de prueba y comprueba que el total cambie.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>El contador se actualiza cuando cambia el estado sin manipular el DOM manualmente.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="comunicacion" style="--section-accent:#dd0031">
 <div class="section-kicker">13 · Componentes que conversan</div>
 <h2>Comunicación padre ↔ hijo</h2>
@@ -18006,6 +18555,31 @@ export class BotonEliminar {
         En código antiguo verás <code>@Input()</code> y <code>@Output()</code>. Esas APIs siguen existiendo,
         pero para proyectos nuevos la documentación actual recomienda las funciones <code>input()</code> y <code>output()</code>.
       </div>
+
+<details class="mini-project-step" data-mini-project="comunicacion">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 22 de 35</span>
+    <strong>Conectar padre e hijo</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>lista-estudiantes + estudiante-card</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Envía un estudiante desde el padre hacia la tarjeta.</li><li>Agrega en la tarjeta un botón “Eliminar”.</li><li>Emite el id hacia el padre cuando se pulse el botón.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>El hijo muestra datos recibidos y puede avisar al padre qué estudiante se quiere eliminar.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="servicios" style="--section-accent:#dd0031">
 <div class="section-kicker">14 · Reutilización</div>
 <h2>Servicios e inyección de dependencias</h2>
@@ -18073,6 +18647,31 @@ export class ListaEstudiantes {
 <strong>¿Qué significa inyección?</strong> Tu componente no tiene que construir manualmente el servicio.
         Angular administra esa dependencia y te da una instancia cuando llamas <code>inject(EstudiantesService)</code>.
       </div>
+
+<details class="mini-project-step" data-mini-project="servicios">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 23 de 35</span>
+    <strong>Mover los datos a un servicio</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/services/estudiantes.ts</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea EstudiantesService.</li><li>Mueve allí el arreglo y un método obtenerEstudiantes().</li><li>Inyecta el servicio en la lista y deja de guardar los datos dentro del componente.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>El componente se concentra en mostrar la UI y el servicio se encarga de los datos.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="rutas" style="--section-accent:#dd0031">
 <div class="section-kicker">15 · Navegación</div>
 <h2>Rutas: cambiar de “página” sin recargar toda la app</h2><div class="section-study-strip" data-study-section="rutas">
@@ -18213,6 +18812,31 @@ export class App {}</pre>
 <strong><code>routerLink</code></strong> inicia la navegación.
         <strong><code>router-outlet</code></strong> marca el lugar donde Angular renderizará el componente de la ruta activa.
       </div>
+
+<details class="mini-project-step" data-mini-project="rutas">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 24 de 35</span>
+    <strong>Crear dos pantallas reales</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>app.routes.ts</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea las rutas /estudiantes y /estudiantes/nuevo.</li><li>Agrega enlaces para navegar sin recargar.</li><li>Configura una ruta por defecto que lleve a /estudiantes.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes cambiar entre lista y formulario y la URL también cambia.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="angular" id="organizacion" style="--section-accent:#dd0031">
 <div class="section-kicker">16 · Arquitectura inicial</div>
 <h2>¿Cómo deberías estructurar un proyecto?</h2>
@@ -18299,6 +18923,31 @@ export class App {}</pre>
 <p>Se vuelve difícil encontrar responsabilidades.</p>
 </div>
 </div>
+
+<details class="mini-project-step" data-mini-project="organizacion">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 25 de 35</span>
+    <strong>Ordenar el proyecto por funcionalidad</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>src/app/features/estudiantes/</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Agrupa lista, formulario y tarjeta dentro de la funcionalidad estudiantes.</li><li>Deja elementos reutilizables en shared.</li><li>Corrige imports y comprueba que ng serve siga funcionando.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La aplicación funciona igual, pero ahora encontrar cada archivo resulta más fácil.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="advanced" id="crud-angular-completo" style="--section-accent:#7c3aed">
 <div class="section-kicker">04A · CRUD completo</div>
 <h2>CRUD en Angular: listar, crear, editar y eliminar</h2>
@@ -18624,7 +19273,32 @@ this.api.obtener(id).subscribe(u =&gt; this.formulario.patchValue(u));</pre>
 </div>
 </div>
 </div>
-</details></section><section data-aos="fade-up" data-course-group="advanced" id="rxjs-desde-cero" style="--section-accent:#7c3aed">
+</details>
+<details class="mini-project-step" data-mini-project="crud-angular-completo">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 26 de 35</span>
+    <strong>Completar CRUD en memoria</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>servicio + lista + formulario</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>CREATE: agrega un estudiante desde el formulario.</li><li>UPDATE: carga un estudiante y permite cambiar su nombre.</li><li>DELETE: elimina con confirmación y comprueba que la lista cambie.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes crear, editar y eliminar estudiantes sin recargar la página.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
+</section><section data-aos="fade-up" data-course-group="advanced" id="rxjs-desde-cero" style="--section-accent:#7c3aed">
 <div class="section-kicker">04B · RxJS desde cero</div>
 <h2>RxJS en Angular: Observables sin memorizar operadores</h2>
 <p class="lead">RxJS modela valores que llegan con el tiempo. HttpClient devuelve Observables, los formularios pueden emitir cambios y Angular incluye interoperabilidad entre Observables y Signals.</p><div class="section-study-strip" data-study-section="rxjs-desde-cero">
@@ -18863,7 +19537,32 @@ constructor() {
 <span class="flow-box good">Signal</span>
 </div>
 </div>
-</details></section><section data-aos="fade-up" data-course-group="advanced" id="autenticacion-angular" style="--section-accent:#7c3aed">
+</details>
+<details class="mini-project-step" data-mini-project="rxjs-desde-cero">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 27 de 35</span>
+    <strong>Crear búsqueda reactiva</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>lista-estudiantes</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Agrega un input de búsqueda.</li><li>Convierte los cambios en un flujo y evita búsquedas innecesarias con debounce.</li><li>Filtra la lista o simula una consulta y muestra el resultado.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Al escribir rápidamente, la búsqueda espera un momento antes de actualizar resultados.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
+</section><section data-aos="fade-up" data-course-group="advanced" id="autenticacion-angular" style="--section-accent:#7c3aed">
 <div class="section-kicker">04C · Autenticación</div>
 <h2>Login, sesión, interceptor y guard: el flujo completo</h2>
 <p class="lead">Autenticación responde “¿quién eres?” y autorización “¿qué puedes hacer?”. El frontend mejora la experiencia, pero la protección real de operaciones sensibles debe existir también en el backend.</p><div class="section-study-strip" data-study-section="autenticacion-angular">
@@ -19178,6 +19877,31 @@ this.router.navigate(['/login']);</pre>
 <strong>Patrones verificados con documentación actual de Angular:</strong>
   interceptores funcionales, guards funcionales y APIs de interoperabilidad RxJS.
 </div>
+
+<details class="mini-project-step" data-mini-project="autenticacion-angular">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 28 de 35</span>
+    <strong>Agregar un login de práctica</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>login + auth service + guard</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Crea un formulario con correo y contraseña de demostración.</li><li>Guarda un estado de sesión simple en un servicio.</li><li>Protege la ruta /estudiantes y redirige al login cuando no haya sesión.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Sin iniciar sesión no puedes entrar a estudiantes; al iniciar sesión sí puedes.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="advanced" id="errores" style="--section-accent:#7c3aed">
 <div class="section-kicker">17 · Diagnóstico</div>
 <h2>Errores comunes del principiante</h2><div class="section-study-strip" data-study-section="errores">
@@ -19212,6 +19936,31 @@ this.router.navigate(['/login']);</pre>
         Evita “arreglar” errores borrando <code>node_modules</code> como primer intento.
         Primero entiende el mensaje: muchas fallas son simplemente un import faltante o un nombre incorrecto.
       </div>
+
+<details class="mini-project-step" data-mini-project="errores">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 29 de 35</span>
+    <strong>Diseñar estados de la interfaz</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>lista-estudiantes.html</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Agrega mensajes para cargando, vacío y error.</li><li>Simula cada estado cambiando una variable.</li><li>Comprueba que nunca aparezcan dos estados contradictorios al mismo tiempo.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>La aplicación informa claramente qué está pasando incluso cuando no hay datos o algo falla.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="practice" id="proyecto-final-estudiantes" style="--section-accent:#059669">
 <div class="section-kicker">05 · Proyecto final integrador</div>
 <h2>Proyecto final: Sistema de estudiantes</h2>
@@ -19541,7 +20290,32 @@ req.flush([
   pasando por Angular y el servicio HTTP, hasta la API y de vuelta a la interfaz.
 </div>
 </div>
-</details></section>
+</details>
+<details class="mini-project-step" data-mini-project="proyecto-final-estudiantes">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 30 de 35</span>
+    <strong>Integrar todas las piezas</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>proyecto completo</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Recorre el checklist de la sección y marca lo que ya construiste.</li><li>Conecta formulario, lista, servicio, rutas y estados.</li><li>Haz una demostración completa: entrar, crear, editar, buscar y eliminar.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes explicar el recorrido completo de un dato desde el formulario hasta la lista y el servicio.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
+</section>
 <section data-aos="fade-up" data-course-group="practice" id="ejercicios-faciles" style="--section-accent:#10b981">
 <div class="section-kicker">18 · Calentamiento práctico</div>
 <h2>Ejercicios fáciles para empezar</h2>
@@ -19681,6 +20455,31 @@ curso = 'Angular desde cero';
 <h3>¿Cuándo pasar a la siguiente sección?</h3>
 <p>Cuando puedas resolver al menos 9 de los 12 ejercicios sin copiar la pista completa. Después continúa con <strong>Ejercicios después de lo fundamental</strong>, donde empezarás a combinar más conceptos.</p>
 </div>
+
+<details class="mini-project-step" data-mini-project="ejercicios-faciles">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 31 de 35</span>
+    <strong>Personalizar el gestor</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>componentes ya creados</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Cambia textos, nombres de ejemplo y estilos con tus propias decisiones.</li><li>Agrega un campo sencillo como semestre o ciudad.</li><li>Muestra ese nuevo campo en la tarjeta.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>El proyecto ya no es una copia exacta: tiene una pequeña mejora hecha por ti.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section>
 <section data-aos="fade-up" data-course-group="practice" id="ejercicios" style="--section-accent:#059669">
 <div class="section-kicker">19 · Práctica guiada</div>
@@ -19738,6 +20537,31 @@ curso = 'Angular desde cero';
 <div class="exercise-top"><div><h3 style="margin:0">12. Mini CRUD en memoria</h3><p>Agregar y eliminar estudiantes sin backend.</p></div><span class="level hard">RETO</span></div>
 <p>No necesitas API todavía: usa un arreglo administrado por un servicio.</p>
 </article>
+
+<details class="mini-project-step" data-mini-project="ejercicios">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 32 de 35</span>
+    <strong>Añadir una mejora elegida</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>proyecto completo</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Elige una mejora: filtro por programa, validación extra o botón limpiar.</li><li>Haz primero una versión mínima que funcione.</li><li>Prueba tres casos y anota qué corregiste.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Tienes una funcionalidad adicional que puedes mostrar y explicar sin ayuda.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="practice" id="proyecto" style="--section-accent:#059669">
 <div class="section-kicker">20 · Integración</div>
 <h2>Proyecto final: Mini gestión de estudiantes</h2>
@@ -19812,6 +20636,31 @@ curso = 'Angular desde cero';
 </tbody>
 </table>
 </div>
+
+<details class="mini-project-step" data-mini-project="proyecto">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 33 de 35</span>
+    <strong>Preparar una entrega corta</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>proyecto completo</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Revisa que no haya errores en consola.</li><li>Haz una demostración de máximo 3 minutos.</li><li>Escribe en README qué aprendiste y qué te costó más.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Otra persona puede abrir el proyecto, entender qué hace y seguir tu demostración.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="practice" id="quiz" style="--section-accent:#059669">
 <div class="section-kicker">21 · Verificación</div>
 <h2>Autoevaluación rápida</h2><div class="section-study-strip" data-study-section="quiz">
@@ -19864,6 +20713,31 @@ curso = 'Angular desde cero';
 <div class="answer"><code>node_modules/</code>, porque contiene dependencias administradas por npm.</div>
 </div>
 </div>
+
+<details class="mini-project-step" data-mini-project="quiz">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 34 de 35</span>
+    <strong>Explicar la app sin mirar código</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>sin archivos</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Explica qué es un componente usando tu tarjeta de estudiante.</li><li>Explica qué hace el servicio usando tu lista.</li><li>Explica por qué usaste rutas y formularios.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Puedes explicar al menos tres decisiones del proyecto con tus propias palabras.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
 </section><section data-aos="fade-up" data-course-group="practice" id="glosario" style="--section-accent:#059669">
 <div class="section-kicker">22 · Referencia rápida</div>
 <h2>Glosario para no perderse</h2><div class="section-study-strip" data-study-section="glosario">
@@ -19933,7 +20807,32 @@ curso = 'Angular desde cero';
 <li><a href="https://angular.dev/essentials/dependency-injection" rel="noopener" target="_blank">Angular · Dependency injection</a></li>
 <li><a href="https://angular.dev/reference/configs/file-structure" rel="noopener" target="_blank">Angular · File structure</a></li>
 </ul>
-<nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#inicio"><small>← ANTERIOR</small><strong>Inicio</strong></a><a class="lesson-pager-link next" href="#html-desde-cero"><small>SIGUIENTE →</small><strong>HTML: aprender a construir la estructura antes de usar Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#antes"><small>← ANTERIOR</small><strong>¿Qué debes saber antes de tocar Angular?</strong></a><a class="lesson-pager-link next" href="#css-desde-cero"><small>SIGUIENTE →</small><strong>CSS explicado para entender los ejemplos de Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#html-desde-cero"><small>← ANTERIOR</small><strong>HTML: aprender a construir la estructura antes de usar Angular</strong></a><a class="lesson-pager-link next" href="#javascript"><small>SIGUIENTE →</small><strong>JavaScript que debes saber antes de Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#css-desde-cero"><small>← ANTERIOR</small><strong>CSS explicado para entender los ejemplos de Angular</strong></a><a class="lesson-pager-link next" href="#typescript-desde-cero"><small>SIGUIENTE →</small><strong>TypeScript: entender el lenguaje que realmente escribe Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#javascript"><small>← ANTERIOR</small><strong>JavaScript que debes saber antes de Angular</strong></a><a class="lesson-pager-link next" href="#apis-desde-cero"><small>SIGUIENTE →</small><strong>Consumir APIs desde cero: primero JavaScript, después Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#typescript-desde-cero"><small>← ANTERIOR</small><strong>TypeScript: entender el lenguaje que realmente escribe Angular</strong></a><a class="lesson-pager-link next" href="#interaccion-formularios-rutas"><small>SIGUIENTE →</small><strong>Formularios, botones y rutas: de HTML a Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#apis-desde-cero"><small>← ANTERIOR</small><strong>Consumir APIs desde cero: primero JavaScript, después Angular</strong></a><a class="lesson-pager-link next" href="#que-es"><small>SIGUIENTE →</small><strong>¿Qué es Angular?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#interaccion-formularios-rutas"><small>← ANTERIOR</small><strong>Formularios, botones y rutas: de HTML a Angular</strong></a><a class="lesson-pager-link next" href="#mapa-angular"><small>SIGUIENTE →</small><strong>Todos los conceptos esenciales de Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#que-es"><small>← ANTERIOR</small><strong>¿Qué es Angular?</strong></a><a class="lesson-pager-link next" href="#angular-propio"><small>SIGUIENTE →</small><strong>Conceptos propios de Angular, explicados desde cero</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#mapa-angular"><small>← ANTERIOR</small><strong>Todos los conceptos esenciales de Angular</strong></a><a class="lesson-pager-link next" href="#instalacion"><small>SIGUIENTE →</small><strong>Instalación paso a paso</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#angular-propio"><small>← ANTERIOR</small><strong>Conceptos propios de Angular, explicados desde cero</strong></a><a class="lesson-pager-link next" href="#crear"><small>SIGUIENTE →</small><strong>Crear tu primera aplicación Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#instalacion"><small>← ANTERIOR</small><strong>Instalación paso a paso</strong></a><a class="lesson-pager-link next" href="#hola"><small>SIGUIENTE →</small><strong>Hola Mundo paso a paso</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#crear"><small>← ANTERIOR</small><strong>Crear tu primera aplicación Angular</strong></a><a class="lesson-pager-link next" href="#visual"><small>SIGUIENTE →</small><strong>¿Cómo se ve realmente cada concepto Angular?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#hola"><small>← ANTERIOR</small><strong>Hola Mundo paso a paso</strong></a><a class="lesson-pager-link next" href="#estructura"><small>SIGUIENTE →</small><strong>Entender la estructura de carpetas</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#visual"><small>← ANTERIOR</small><strong>¿Cómo se ve realmente cada concepto Angular?</strong></a><a class="lesson-pager-link next" href="#rutas-archivos"><small>SIGUIENTE →</small><strong>¿En qué carpeta está cada archivo?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#estructura"><small>← ANTERIOR</small><strong>Entender la estructura de carpetas</strong></a><a class="lesson-pager-link next" href="#componentes"><small>SIGUIENTE →</small><strong>Componentes: la idea más importante</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#rutas-archivos"><small>← ANTERIOR</small><strong>¿En qué carpeta está cada archivo?</strong></a><a class="lesson-pager-link next" href="#binding"><small>SIGUIENTE →</small><strong>Binding: conectar TypeScript con HTML</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#componentes"><small>← ANTERIOR</small><strong>Componentes: la idea más importante</strong></a><a class="lesson-pager-link next" href="#control"><small>SIGUIENTE →</small><strong>Control de flujo con @if y @for</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#binding"><small>← ANTERIOR</small><strong>Binding: conectar TypeScript con HTML</strong></a><a class="lesson-pager-link next" href="#forms"><small>SIGUIENTE →</small><strong>Formulario básico con ngModel</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#control"><small>← ANTERIOR</small><strong>Control de flujo con @if y @for</strong></a><a class="lesson-pager-link next" href="#signals"><small>SIGUIENTE →</small><strong>Signals: una forma moderna de manejar estado</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#forms"><small>← ANTERIOR</small><strong>Formulario básico con ngModel</strong></a><a class="lesson-pager-link next" href="#comunicacion"><small>SIGUIENTE →</small><strong>Comunicación padre ↔ hijo</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#signals"><small>← ANTERIOR</small><strong>Signals: una forma moderna de manejar estado</strong></a><a class="lesson-pager-link next" href="#servicios"><small>SIGUIENTE →</small><strong>Servicios e inyección de dependencias</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#comunicacion"><small>← ANTERIOR</small><strong>Comunicación padre ↔ hijo</strong></a><a class="lesson-pager-link next" href="#rutas"><small>SIGUIENTE →</small><strong>Rutas: cambiar de “página” sin recargar toda la app</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#servicios"><small>← ANTERIOR</small><strong>Servicios e inyección de dependencias</strong></a><a class="lesson-pager-link next" href="#organizacion"><small>SIGUIENTE →</small><strong>¿Cómo deberías estructurar un proyecto?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#rutas"><small>← ANTERIOR</small><strong>Rutas: cambiar de “página” sin recargar toda la app</strong></a><a class="lesson-pager-link next" href="#crud-angular-completo"><small>SIGUIENTE →</small><strong>CRUD en Angular: listar, crear, editar y eliminar</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#organizacion"><small>← ANTERIOR</small><strong>¿Cómo deberías estructurar un proyecto?</strong></a><a class="lesson-pager-link next" href="#rxjs-desde-cero"><small>SIGUIENTE →</small><strong>RxJS en Angular: Observables sin memorizar operadores</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#crud-angular-completo"><small>← ANTERIOR</small><strong>CRUD en Angular: listar, crear, editar y eliminar</strong></a><a class="lesson-pager-link next" href="#autenticacion-angular"><small>SIGUIENTE →</small><strong>Login, sesión, interceptor y guard: el flujo completo</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#rxjs-desde-cero"><small>← ANTERIOR</small><strong>RxJS en Angular: Observables sin memorizar operadores</strong></a><a class="lesson-pager-link next" href="#errores"><small>SIGUIENTE →</small><strong>Errores comunes del principiante</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#autenticacion-angular"><small>← ANTERIOR</small><strong>Login, sesión, interceptor y guard: el flujo completo</strong></a><a class="lesson-pager-link next" href="#proyecto-final-estudiantes"><small>SIGUIENTE →</small><strong>Proyecto final: Sistema de estudiantes</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#errores"><small>← ANTERIOR</small><strong>Errores comunes del principiante</strong></a><a class="lesson-pager-link next" href="#ejercicios-faciles"><small>SIGUIENTE →</small><strong>Ejercicios fáciles para empezar</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#proyecto-final-estudiantes"><small>← ANTERIOR</small><strong>Proyecto final: Sistema de estudiantes</strong></a><a class="lesson-pager-link next" href="#ejercicios"><small>SIGUIENTE →</small><strong>Ejercicios después de lo fundamental</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#ejercicios-faciles"><small>← ANTERIOR</small><strong>Ejercicios fáciles para empezar</strong></a><a class="lesson-pager-link next" href="#proyecto"><small>SIGUIENTE →</small><strong>Proyecto final: Mini gestión de estudiantes</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#ejercicios"><small>← ANTERIOR</small><strong>Ejercicios después de lo fundamental</strong></a><a class="lesson-pager-link next" href="#quiz"><small>SIGUIENTE →</small><strong>Autoevaluación rápida</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#proyecto"><small>← ANTERIOR</small><strong>Proyecto final: Mini gestión de estudiantes</strong></a><a class="lesson-pager-link next" href="#glosario"><small>SIGUIENTE →</small><strong>Glosario para no perderse</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#quiz"><small>← ANTERIOR</small><strong>Autoevaluación rápida</strong></a></nav></section><footer class="footer">
+<nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#inicio"><small>← ANTERIOR</small><strong>Inicio</strong></a><a class="lesson-pager-link next" href="#html-desde-cero"><small>SIGUIENTE →</small><strong>HTML: aprender a construir la estructura antes de usar Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#antes"><small>← ANTERIOR</small><strong>¿Qué debes saber antes de tocar Angular?</strong></a><a class="lesson-pager-link next" href="#css-desde-cero"><small>SIGUIENTE →</small><strong>CSS explicado para entender los ejemplos de Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#html-desde-cero"><small>← ANTERIOR</small><strong>HTML: aprender a construir la estructura antes de usar Angular</strong></a><a class="lesson-pager-link next" href="#javascript"><small>SIGUIENTE →</small><strong>JavaScript que debes saber antes de Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#css-desde-cero"><small>← ANTERIOR</small><strong>CSS explicado para entender los ejemplos de Angular</strong></a><a class="lesson-pager-link next" href="#typescript-desde-cero"><small>SIGUIENTE →</small><strong>TypeScript: entender el lenguaje que realmente escribe Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#javascript"><small>← ANTERIOR</small><strong>JavaScript que debes saber antes de Angular</strong></a><a class="lesson-pager-link next" href="#apis-desde-cero"><small>SIGUIENTE →</small><strong>Consumir APIs desde cero: primero JavaScript, después Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#typescript-desde-cero"><small>← ANTERIOR</small><strong>TypeScript: entender el lenguaje que realmente escribe Angular</strong></a><a class="lesson-pager-link next" href="#interaccion-formularios-rutas"><small>SIGUIENTE →</small><strong>Formularios, botones y rutas: de HTML a Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#apis-desde-cero"><small>← ANTERIOR</small><strong>Consumir APIs desde cero: primero JavaScript, después Angular</strong></a><a class="lesson-pager-link next" href="#que-es"><small>SIGUIENTE →</small><strong>¿Qué es Angular?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#interaccion-formularios-rutas"><small>← ANTERIOR</small><strong>Formularios, botones y rutas: de HTML a Angular</strong></a><a class="lesson-pager-link next" href="#mapa-angular"><small>SIGUIENTE →</small><strong>Todos los conceptos esenciales de Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#que-es"><small>← ANTERIOR</small><strong>¿Qué es Angular?</strong></a><a class="lesson-pager-link next" href="#angular-propio"><small>SIGUIENTE →</small><strong>Conceptos propios de Angular, explicados desde cero</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#mapa-angular"><small>← ANTERIOR</small><strong>Todos los conceptos esenciales de Angular</strong></a><a class="lesson-pager-link next" href="#instalacion"><small>SIGUIENTE →</small><strong>Instalación paso a paso</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#angular-propio"><small>← ANTERIOR</small><strong>Conceptos propios de Angular, explicados desde cero</strong></a><a class="lesson-pager-link next" href="#crear"><small>SIGUIENTE →</small><strong>Crear tu primera aplicación Angular</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#instalacion"><small>← ANTERIOR</small><strong>Instalación paso a paso</strong></a><a class="lesson-pager-link next" href="#hola"><small>SIGUIENTE →</small><strong>Hola Mundo paso a paso</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#crear"><small>← ANTERIOR</small><strong>Crear tu primera aplicación Angular</strong></a><a class="lesson-pager-link next" href="#visual"><small>SIGUIENTE →</small><strong>¿Cómo se ve realmente cada concepto Angular?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#hola"><small>← ANTERIOR</small><strong>Hola Mundo paso a paso</strong></a><a class="lesson-pager-link next" href="#estructura"><small>SIGUIENTE →</small><strong>Entender la estructura de carpetas</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#visual"><small>← ANTERIOR</small><strong>¿Cómo se ve realmente cada concepto Angular?</strong></a><a class="lesson-pager-link next" href="#rutas-archivos"><small>SIGUIENTE →</small><strong>¿En qué carpeta está cada archivo?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#estructura"><small>← ANTERIOR</small><strong>Entender la estructura de carpetas</strong></a><a class="lesson-pager-link next" href="#componentes"><small>SIGUIENTE →</small><strong>Componentes: la idea más importante</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#rutas-archivos"><small>← ANTERIOR</small><strong>¿En qué carpeta está cada archivo?</strong></a><a class="lesson-pager-link next" href="#binding"><small>SIGUIENTE →</small><strong>Binding: conectar TypeScript con HTML</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#componentes"><small>← ANTERIOR</small><strong>Componentes: la idea más importante</strong></a><a class="lesson-pager-link next" href="#control"><small>SIGUIENTE →</small><strong>Control de flujo con @if y @for</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#binding"><small>← ANTERIOR</small><strong>Binding: conectar TypeScript con HTML</strong></a><a class="lesson-pager-link next" href="#forms"><small>SIGUIENTE →</small><strong>Formulario básico con ngModel</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#control"><small>← ANTERIOR</small><strong>Control de flujo con @if y @for</strong></a><a class="lesson-pager-link next" href="#signals"><small>SIGUIENTE →</small><strong>Signals: una forma moderna de manejar estado</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#forms"><small>← ANTERIOR</small><strong>Formulario básico con ngModel</strong></a><a class="lesson-pager-link next" href="#comunicacion"><small>SIGUIENTE →</small><strong>Comunicación padre ↔ hijo</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#signals"><small>← ANTERIOR</small><strong>Signals: una forma moderna de manejar estado</strong></a><a class="lesson-pager-link next" href="#servicios"><small>SIGUIENTE →</small><strong>Servicios e inyección de dependencias</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#comunicacion"><small>← ANTERIOR</small><strong>Comunicación padre ↔ hijo</strong></a><a class="lesson-pager-link next" href="#rutas"><small>SIGUIENTE →</small><strong>Rutas: cambiar de “página” sin recargar toda la app</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#servicios"><small>← ANTERIOR</small><strong>Servicios e inyección de dependencias</strong></a><a class="lesson-pager-link next" href="#organizacion"><small>SIGUIENTE →</small><strong>¿Cómo deberías estructurar un proyecto?</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#rutas"><small>← ANTERIOR</small><strong>Rutas: cambiar de “página” sin recargar toda la app</strong></a><a class="lesson-pager-link next" href="#crud-angular-completo"><small>SIGUIENTE →</small><strong>CRUD en Angular: listar, crear, editar y eliminar</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#organizacion"><small>← ANTERIOR</small><strong>¿Cómo deberías estructurar un proyecto?</strong></a><a class="lesson-pager-link next" href="#rxjs-desde-cero"><small>SIGUIENTE →</small><strong>RxJS en Angular: Observables sin memorizar operadores</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#crud-angular-completo"><small>← ANTERIOR</small><strong>CRUD en Angular: listar, crear, editar y eliminar</strong></a><a class="lesson-pager-link next" href="#autenticacion-angular"><small>SIGUIENTE →</small><strong>Login, sesión, interceptor y guard: el flujo completo</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#rxjs-desde-cero"><small>← ANTERIOR</small><strong>RxJS en Angular: Observables sin memorizar operadores</strong></a><a class="lesson-pager-link next" href="#errores"><small>SIGUIENTE →</small><strong>Errores comunes del principiante</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#autenticacion-angular"><small>← ANTERIOR</small><strong>Login, sesión, interceptor y guard: el flujo completo</strong></a><a class="lesson-pager-link next" href="#proyecto-final-estudiantes"><small>SIGUIENTE →</small><strong>Proyecto final: Sistema de estudiantes</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#errores"><small>← ANTERIOR</small><strong>Errores comunes del principiante</strong></a><a class="lesson-pager-link next" href="#ejercicios-faciles"><small>SIGUIENTE →</small><strong>Ejercicios fáciles para empezar</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#proyecto-final-estudiantes"><small>← ANTERIOR</small><strong>Proyecto final: Sistema de estudiantes</strong></a><a class="lesson-pager-link next" href="#ejercicios"><small>SIGUIENTE →</small><strong>Ejercicios después de lo fundamental</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#ejercicios-faciles"><small>← ANTERIOR</small><strong>Ejercicios fáciles para empezar</strong></a><a class="lesson-pager-link next" href="#proyecto"><small>SIGUIENTE →</small><strong>Proyecto final: Mini gestión de estudiantes</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#ejercicios"><small>← ANTERIOR</small><strong>Ejercicios después de lo fundamental</strong></a><a class="lesson-pager-link next" href="#quiz"><small>SIGUIENTE →</small><strong>Autoevaluación rápida</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#proyecto"><small>← ANTERIOR</small><strong>Proyecto final: Mini gestión de estudiantes</strong></a><a class="lesson-pager-link next" href="#glosario"><small>SIGUIENTE →</small><strong>Glosario para no perderse</strong></a></nav><nav aria-label="Navegación entre lecciones" class="lesson-pager"><a class="lesson-pager-link prev" href="#quiz"><small>← ANTERIOR</small><strong>Autoevaluación rápida</strong></a></nav>
+<details class="mini-project-step" data-mini-project="glosario">
+  <summary>
+    <span class="mini-project-kicker">Mini proyecto acumulativo · Paso 35 de 35</span>
+    <strong>Crear tu glosario del proyecto</strong>
+    <span class="mini-project-open">Ver práctica</span>
+  </summary>
+  <div class="mini-project-body">
+    <div class="mini-project-brief">
+      <div><span>Proyecto</span><strong>Gestor de estudiantes</strong></div>
+      <div><span>Archivos</span><strong>README.md</strong></div>
+    </div>
+    <div class="mini-project-columns">
+      <div>
+        <h4>Hazlo ahora</h4>
+        <ol><li>Elige 10 palabras que realmente usaste en la aplicación.</li><li>Escribe una definición de una sola frase para cada una.</li><li>Añade un ejemplo concreto tomado de tu Gestor de estudiantes.</li></ol>
+      </div>
+      <div class="mini-project-preview">
+        <span class="mini-project-preview-label">Así sé que terminé</span>
+        <p>Tu glosario conecta cada término de Angular con algo que sí existe en tu proyecto.</p>
+        <div class="mini-project-checkline">☐ Lo hice &nbsp; ☐ Lo probé &nbsp; ☐ Puedo explicarlo</div>
+      </div>
+    </div>
+  </div>
+</details>
+</section><footer class="footer">
 <strong>Angular desde Cero</strong><br/>
       Material didáctico para aprendizaje progresivo. Usa los ejercicios como laboratorio:
       escribe el código, provoca errores, léelos y corrígelos.
