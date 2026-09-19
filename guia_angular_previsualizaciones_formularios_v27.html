@@ -21193,13 +21193,48 @@ ng serve</pre></div>
 </details>
 
 <details class="final-zero-phase">
-<summary><span class="final-zero-number">2</span><span class="final-zero-phase-title"><strong>Crear la estructura de trabajo</strong><small>Separar modelo, servicio y pantallas</small></span><span class="final-zero-open">Abrir paso</span></summary>
+<summary><span class="final-zero-number">2</span><span class="final-zero-phase-title"><strong>Crear la estructura de trabajo</strong><small>Entender de dónde salen features, models, services y las pantallas</small></span><span class="final-zero-open">Abrir paso</span></summary>
 <div class="final-zero-phase-body">
-<p>Crea los componentes con Angular CLI y luego prepara las carpetas del modelo y servicio.</p>
+<p><strong>No tienes que crear <code>features</code> ni <code>estudiantes</code> manualmente antes de usar Angular CLI.</strong> Cuando escribes una ruta completa en el comando, Angular crea las carpetas que todavía no existen.</p>
+
+<div class="callout info">
+<strong>¿De dónde salen esas carpetas?</strong>
+<code>features</code>, <code>models</code> y <code>services</code> no son palabras reservadas de Angular. Son una forma de organizar el proyecto. En esta guía:
+<code>features</code> agrupa funcionalidades, <code>models</code> guarda la forma de los datos y <code>services</code> concentra lógica compartida.
+</div>
+
+<h4>1. Genera los archivos desde la raíz del proyecto</h4>
+<p>Abre la terminal en <code>gestor-estudiantes</code>, exactamente donde está <code>angular.json</code>, y ejecuta los comandos uno por uno:</p>
 <div class="codebox"><div class="codehead"><strong>Terminal</strong><button class="copy">Copiar</button></div>
 <pre>ng g c features/estudiantes/lista-estudiantes --skip-tests
 ng g c features/estudiantes/formulario-estudiante --skip-tests
-ng g s services/estudiantes --skip-tests</pre></div>
+ng g s services/estudiantes --skip-tests
+ng g i models/estudiante</pre></div>
+
+<div class="callout success">
+<strong>Observa la ruta del comando:</strong>
+al ejecutar <code>ng g c features/estudiantes/lista-estudiantes</code>, Angular CLI crea <code>features/</code>, luego <code>estudiantes/</code> y finalmente la carpeta del componente. Lo mismo ocurre con <code>services/</code> y <code>models/</code> cuando no existen.
+</div>
+
+<div class="table-wrap" style="margin-top:16px">
+<table>
+<thead><tr><th>Comando</th><th>Qué crea</th><th>Para qué sirve</th></tr></thead>
+<tbody>
+<tr><td><code>ng g c features/estudiantes/lista-estudiantes --skip-tests</code></td><td><code>src/app/features/estudiantes/lista-estudiantes/</code></td><td>Pantalla para mostrar los estudiantes.</td></tr>
+<tr><td><code>ng g c features/estudiantes/formulario-estudiante --skip-tests</code></td><td><code>src/app/features/estudiantes/formulario-estudiante/</code></td><td>Pantalla para crear o editar un estudiante.</td></tr>
+<tr><td><code>ng g s services/estudiantes --skip-tests</code></td><td><code>src/app/services/estudiantes.ts</code></td><td>Servicio donde centralizaremos el CRUD y los datos.</td></tr>
+<tr><td><code>ng g i models/estudiante</code></td><td><code>src/app/models/estudiante.ts</code></td><td>Interfaz que define qué datos tendrá un estudiante.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="callout warning">
+<strong>Si ves nombres como <code>estudiantes.service.ts</code> o <code>estudiante.interface.ts</code>:</strong>
+no significa que el comando haya fallado. Algunas versiones o configuraciones de Angular usan la convención clásica de nombres; esta guía usa la convención moderna y más corta.
+</div>
+
+<h4>2. Comprueba la estructura creada</h4>
+<p>Después de ejecutar los cuatro comandos, abre <code>src/app</code> en el explorador de VS Code y compáralo con este árbol:</p>
 <div class="codebox"><div class="codehead"><strong>Estructura objetivo</strong></div>
 <pre>src/app/
 ├── app.ts
@@ -21220,7 +21255,13 @@ ng g s services/estudiantes --skip-tests</pre></div>
             ├── formulario-estudiante.ts
             ├── formulario-estudiante.html
             └── formulario-estudiante.css</pre></div>
-<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> puedo decir dónde está el modelo, dónde está la lógica de datos y dónde están las dos pantallas.</div>
+
+<div class="callout info">
+<strong>Si prefieres crear una carpeta manualmente:</strong>
+también puedes hacer clic derecho sobre <code>src/app</code> en VS Code y elegir <strong>New Folder</strong>. Para este proyecto no es necesario hacerlo con <code>features</code>, <code>services</code> ni <code>models</code>, porque los comandos anteriores ya las crean.
+</div>
+
+<div class="final-zero-check"><strong>✓ Terminé este paso cuando:</strong> veo <code>features</code>, <code>services</code> y <code>models</code> dentro de <code>src/app</code>, sé qué comando creó cada una y puedo explicar para qué sirve cada carpeta.</div>
 </div>
 </details>
 
