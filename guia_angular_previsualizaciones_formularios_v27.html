@@ -9473,6 +9473,15 @@ body.theme-dark .beginner-lesson-head{background:linear-gradient(135deg,#101b31,
 body.theme-dark .project-before-write{background:#0d1b32;border-color:#1e40af}body.theme-dark .project-before-write li{color:#cbd5e1}
 @media(max-width:900px){.course-roadmap-v32 .roadmap-flow{grid-template-columns:1fr 1fr}.beginner-lesson-grid,.project-context-v32{grid-template-columns:1fr}.learning-curve-flow{grid-template-columns:1fr}.learning-curve-flow i{transform:rotate(90deg);justify-self:center}.progressive-project-head-v32{flex-direction:column}.project-continuity-rule,.project-explain-v32{flex-direction:column}.project-continuity-rule strong,.project-explain-v32 strong{white-space:normal}}
 </style>
+<style id="angular-base-code-v33">
+.project-code-stack-v33{margin:0 16px 14px;padding:14px;border:1px solid #dbe4ef;border-radius:14px;background:#f8fafc}
+.project-code-title-v33{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:10px}.project-code-title-v33 span{display:block;font-size:11px;font-weight:900;letter-spacing:.08em;color:#0f766e}.project-code-title-v33 strong{display:block;margin-top:3px;color:#0f172a}.project-code-title-v33 small{padding:5px 8px;border:1px solid #dbe4ef;border-radius:999px;background:#fff;color:#64748b;font-weight:800;white-space:nowrap}
+.project-code-note-v33{display:flex;gap:7px;margin-bottom:12px;padding:10px 11px;border-left:4px solid #14b8a6;border-radius:10px;background:#ecfeff;color:#155e75;font-size:13px;line-height:1.5}.project-code-note-v33 strong{white-space:nowrap}
+.project-file-code-v33{overflow:hidden;margin-top:10px;border:1px solid #26344f;border-radius:12px;background:#0b1220}.project-file-code-v33:first-of-type{margin-top:0}.project-file-code-head-v33{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 12px;background:#111827;border-bottom:1px solid #26344f;color:#e5e7eb}.project-file-code-head-v33>div{min-width:0}.project-file-code-head-v33 span{display:block;font-size:10px;font-weight:900;letter-spacing:.08em;color:#5eead4}.project-file-code-head-v33 code{display:block;margin-top:3px;color:#e5e7eb;white-space:normal;overflow-wrap:anywhere}.project-file-code-head-v33 .copy{flex:none}
+.project-file-code-v33 pre{margin:0!important;padding:14px!important;border:0!important;border-radius:0!important;background:#0b1220!important;color:#e5e7eb!important;white-space:pre;overflow:auto;font:13px/1.55 var(--mono)!important}.project-file-code-v33 pre code{color:inherit!important;background:transparent!important}
+body.theme-dark .project-code-stack-v33{background:#0f172a;border-color:#334155}body.theme-dark .project-code-title-v33 strong{color:#f8fafc}body.theme-dark .project-code-title-v33 small{background:#111827;border-color:#334155;color:#cbd5e1}body.theme-dark .project-code-note-v33{background:#0c2d33;color:#a5f3fc}
+@media(max-width:720px){.project-code-title-v33,.project-code-note-v33{flex-direction:column}.project-code-note-v33 strong{white-space:normal}.project-file-code-head-v33{align-items:flex-start}.project-file-code-head-v33 .copy{margin-top:2px}}
+</style>
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden"><defs><symbol id="guide-icon-home" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol><symbol id="guide-icon-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></symbol><symbol id="guide-icon-data" viewBox="0 0 24 24"><path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"/></symbol><symbol id="guide-icon-angular" viewBox="0 0 24 24"><path d="m12 3 9 4-2 12-7 3-7-3L3 7Zm-5 13 5-10 5 10m-8-3h6"/></symbol><symbol id="guide-icon-app" viewBox="0 0 24 24"><path d="M3 3h7v7H3Zm11 0h7v7h-7ZM3 14h7v7H3Zm11 0h7v7h-7Z"/></symbol><symbol id="guide-icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol><symbol id="guide-icon-search" viewBox="0 0 24 24"><path d="M21 21l-5-5M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></symbol><symbol id="guide-icon-moon" viewBox="0 0 24 24"><path d="M20.5 13a9 9 0 0 1-9.5-9.5A9 9 0 1 0 20.5 13"/></symbol><symbol id="guide-icon-sun" viewBox="0 0 24 24"><path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol><symbol id="guide-icon-up" viewBox="0 0 24 24"><path d="m5 11 7-7 7 7M12 4v17"/></symbol><symbol id="guide-icon-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 17H3V9h18v8h-3M6 14h12v7H6Zm11-2h1"/></symbol><symbol id="guide-icon-focus" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol><symbol id="guide-icon-exit" viewBox="0 0 24 24"><path d="M3 8h5V3m8 0v5h5M8 21v-5H3m13 5v-5h5"/></symbol><symbol id="guide-icon-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol><symbol id="guide-icon-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></symbol></defs></svg>
@@ -9732,7 +9741,38 @@ edad = "veinte"; // TypeScript avisa del error</pre>
 └── notas/
     └── plan-del-proyecto.md</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 MD</span><code>curso-gestor-estudiantes/notas/plan-del-proyecto.md</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code># Gestor de estudiantes
+
+## Problema
+Necesitamos registrar y consultar estudiantes.
+
+## Pantallas iniciales
+1. Lista de estudiantes
+2. Nuevo estudiante
+3. Editar estudiante
+
+## Datos mínimos
+- id
+- nombre
+- correo
+- programa
+
+## Primera regla
+No crear componentes todavía.
+Primero debemos entender qué necesita la aplicación.</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -9933,7 +9973,62 @@ href="./contacto.html" </pre></div><div class="foundation-use">Úsalo para: recu
 └── practica/
     └── index.html</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>curso-gestor-estudiantes/practica/index.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Gestor de estudiantes&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Gestor de estudiantes&lt;/h1&gt;
+    &lt;p&gt;Prototipo antes de Angular.&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Nuevo estudiante&lt;/h2&gt;
+
+      &lt;form&gt;
+        &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+        &lt;input id="nombre" name="nombre"&gt;
+
+        &lt;label for="correo"&gt;Correo&lt;/label&gt;
+        &lt;input id="correo" name="correo" type="email"&gt;
+
+        &lt;label for="programa"&gt;Programa&lt;/label&gt;
+        &lt;input id="programa" name="programa"&gt;
+
+        &lt;button type="submit"&gt;Guardar&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Estudiantes&lt;/h2&gt;
+
+      &lt;article class="tarjeta"&gt;
+        &lt;h3&gt;Ana Torres&lt;/h3&gt;
+        &lt;p&gt;ana@correo.com&lt;/p&gt;
+        &lt;p&gt;Ingeniería de Sistemas&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -11318,7 +11413,79 @@ opacity</pre>
     ├── index.html
     └── styles.css</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 CSS</span><code>curso-gestor-estudiantes/practica/styles.css</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+header,
+main {
+  width: min(100% - 32px, 900px);
+  margin-inline: auto;
+}
+
+header {
+  padding: 28px 0 12px;
+}
+
+main {
+  display: grid;
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+form,
+.tarjeta {
+  padding: 18px;
+  border: 1px solid #dbe3ef;
+  border-radius: 14px;
+  background: white;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+}
+
+button {
+  margin-top: 16px;
+  padding: 10px 14px;
+  cursor: pointer;
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>curso-gestor-estudiantes/practica/index.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;!-- Agrega esta línea dentro de &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -11836,7 +12003,53 @@ console.log(aprobados);</pre></div>
     ├── styles.css
     └── app.js</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 JS</span><code>curso-gestor-estudiantes/practica/app.js</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>const estudiantes = [
+  {
+    id: 1,
+    nombre: "Ana Torres",
+    correo: "ana@correo.com",
+    programa: "Sistemas"
+  },
+  {
+    id: 2,
+    nombre: "Luis Pérez",
+    correo: "luis@correo.com",
+    programa: "Diseño"
+  }
+];
+
+function filtrarPorNombre(texto) {
+  const busqueda = texto.toLowerCase().trim();
+
+  return estudiantes.filter(function(estudiante) {
+    return estudiante.nombre
+      .toLowerCase()
+      .includes(busqueda);
+  });
+}
+
+console.table(filtrarPorNombre("ana"));</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>curso-gestor-estudiantes/practica/index.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;!-- Antes de cerrar body --&gt;
+&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -12327,7 +12540,38 @@ usuarios = signal&lt;Usuario[]&gt;([]);</code></pre></div>
 └── notas/
     └── mapa-angular.md</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>curso-gestor-estudiantes/practica/estudiante.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>interface Estudiante {
+  id: number;
+  nombre: string;
+  correo: string;
+  programa: string;
+}
+
+const ejemplo: Estudiante = {
+  id: 1,
+  nombre: "Ana Torres",
+  correo: "ana@correo.com",
+  programa: "Sistemas"
+};
+
+function mostrarNombre(estudiante: Estudiante): string {
+  return estudiante.nombre;
+}
+
+console.log(mostrarNombre(ejemplo));</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -12458,7 +12702,38 @@ usuarios = signal&lt;Usuario[]&gt;([]);</code></pre></div>
 └── notas/
     └── mapa-angular.md</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 MD</span><code>curso-gestor-estudiantes/notas/mapa-angular.md</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code># Cómo se convertirá el prototipo a Angular
+
+App
+├── ListaEstudiantes
+│   └── EstudianteCard
+└── FormularioEstudiante
+
+EstudiantesService
+└── será la fuente común de datos
+
+Router
+├── /estudiantes
+├── /estudiantes/nuevo
+└── /estudiantes/:id/editar
+
+Idea:
+componente = interfaz
+servicio = datos/lógica compartida
+router = navegación</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -12601,7 +12876,25 @@ XX.X.X</div>
 └── notas/
     └── mapa-angular.md</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>node --version
+npm --version
+
+npm install -g @angular/cli
+
+ng version</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -12747,7 +13040,24 @@ XX.X.X</div>
         ├── app.routes.ts
         └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal · desde curso-gestor-estudiantes/</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>ng new gestor-estudiantes --routing --style=css --ssr=false
+
+cd gestor-estudiantes
+
+ng serve</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -13060,7 +13370,52 @@ h1 {
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>gestor-estudiantes/src/app/app.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  imports: [],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  titulo = 'Gestor de estudiantes';
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>gestor-estudiantes/src/app/app.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;main class="contenedor"&gt;
+  &lt;h1&gt;{{ titulo }}&lt;/h1&gt;
+  &lt;p&gt;Mi primera aplicación Angular funciona.&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 CSS</span><code>gestor-estudiantes/src/app/app.css</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>.contenedor {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -13294,7 +13649,41 @@ h1 {
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal · raíz de gestor-estudiantes</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>mkdir src/app/features
+mkdir src/app/features/estudiantes
+mkdir src/app/models
+mkdir src/app/services
+mkdir src/app/shared</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TREE</span><code>Estructura esperada</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>src/app/
+├── features/
+│   └── estudiantes/
+├── models/
+├── services/
+├── shared/
+├── app.ts
+├── app.html
+├── app.css
+├── app.routes.ts
+└── app.config.ts</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -13508,7 +13897,32 @@ ng g c pages/acerca</pre>
     ├── services/
     └── shared/</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>ng g i models/estudiante</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>gestor-estudiantes/src/app/models/estudiante.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>export interface Estudiante {
+  id: number;
+  nombre: string;
+  correo: string;
+  programa: string;
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -13736,7 +14150,58 @@ export class Saludo {
             ├── estudiante-card.html
             └── estudiante-card.css</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>4 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>ng g c features/estudiantes/estudiante-card --skip-tests</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/estudiante-card/estudiante-card.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-estudiante-card',
+  imports: [],
+  templateUrl: './estudiante-card.html',
+  styleUrl: './estudiante-card.css'
+})
+export class EstudianteCard {}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/estudiante-card/estudiante-card.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;article class="tarjeta"&gt;
+  &lt;h3&gt;Ana Torres&lt;/h3&gt;
+  &lt;p&gt;ana@correo.com&lt;/p&gt;
+  &lt;small&gt;Ingeniería de Sistemas&lt;/small&gt;
+&lt;/article&gt;</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 CSS</span><code>src/app/features/estudiantes/estudiante-card/estudiante-card.css</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>.tarjeta {
+  padding: 16px;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  background: white;
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -13901,7 +14366,48 @@ cambiarEstado() {
             ├── estudiante-card.html
             └── estudiante-card.css</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/estudiante-card/estudiante-card.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-estudiante-card',
+  imports: [],
+  templateUrl: './estudiante-card.html',
+  styleUrl: './estudiante-card.css'
+})
+export class EstudianteCard {
+  nombre = 'Ana Torres';
+  correo = 'ana@correo.com';
+  programa = 'Ingeniería de Sistemas';
+  activo = true;
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/estudiante-card/estudiante-card.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;article class="tarjeta"&gt;
+  &lt;h3&gt;{{ nombre }}&lt;/h3&gt;
+  &lt;p&gt;{{ correo }}&lt;/p&gt;
+  &lt;small&gt;{{ programa }}&lt;/small&gt;
+
+  &lt;button type="button" [disabled]="!activo"&gt;
+    Ver estudiante
+  &lt;/button&gt;
+&lt;/article&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -14032,7 +14538,70 @@ cambiarEstado() {
         ├── estudiante-card/
         └── lista-estudiantes/</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>ng g c features/estudiantes/lista-estudiantes --skip-tests</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component } from '@angular/core';
+import { Estudiante } from '../../../models/estudiante';
+
+@Component({
+  selector: 'app-lista-estudiantes',
+  imports: [],
+  templateUrl: './lista-estudiantes.html',
+  styleUrl: './lista-estudiantes.css'
+})
+export class ListaEstudiantes {
+  estudiantes: Estudiante[] = [
+    {
+      id: 1,
+      nombre: 'Ana Torres',
+      correo: 'ana@correo.com',
+      programa: 'Sistemas'
+    },
+    {
+      id: 2,
+      nombre: 'Luis Pérez',
+      correo: 'luis@correo.com',
+      programa: 'Diseño'
+    }
+  ];
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;h1&gt;Estudiantes&lt;/h1&gt;
+
+@if (estudiantes.length === 0) {
+  &lt;p&gt;No hay estudiantes registrados.&lt;/p&gt;
+} @else {
+  @for (estudiante of estudiantes; track estudiante.id) {
+    &lt;article class="tarjeta"&gt;
+      &lt;h3&gt;{{ estudiante.nombre }}&lt;/h3&gt;
+      &lt;p&gt;{{ estudiante.correo }}&lt;/p&gt;
+      &lt;small&gt;{{ estudiante.programa }}&lt;/small&gt;
+    &lt;/article&gt;
+  }
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -14167,7 +14736,74 @@ export class Formulario {
         ├── lista-estudiantes/
         └── formulario-estudiante/</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>ng g c features/estudiantes/formulario-estudiante --skip-tests</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/formulario-estudiante/formulario-estudiante.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-formulario-estudiante',
+  imports: [FormsModule],
+  templateUrl: './formulario-estudiante.html',
+  styleUrl: './formulario-estudiante.css'
+})
+export class FormularioEstudiante {
+  nombre = '';
+  correo = '';
+  programa = '';
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/formulario-estudiante/formulario-estudiante.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;h1&gt;Nuevo estudiante&lt;/h1&gt;
+
+&lt;form&gt;
+  &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+  &lt;input
+    id="nombre"
+    name="nombre"
+    [(ngModel)]="nombre"
+  &gt;
+
+  &lt;label for="correo"&gt;Correo&lt;/label&gt;
+  &lt;input
+    id="correo"
+    name="correo"
+    type="email"
+    [(ngModel)]="correo"
+  &gt;
+
+  &lt;label for="programa"&gt;Programa&lt;/label&gt;
+  &lt;input
+    id="programa"
+    name="programa"
+    [(ngModel)]="programa"
+  &gt;
+&lt;/form&gt;
+
+&lt;h2&gt;Vista previa&lt;/h2&gt;
+&lt;p&gt;{{ nombre }} · {{ correo }} · {{ programa }}&lt;/p&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -14300,7 +14936,67 @@ export class Contador {
         ├── lista-estudiantes/
         └── formulario-estudiante/</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component, computed, signal } from '@angular/core';
+import { Estudiante } from '../../../models/estudiante';
+
+@Component({
+  selector: 'app-lista-estudiantes',
+  imports: [],
+  templateUrl: './lista-estudiantes.html',
+  styleUrl: './lista-estudiantes.css'
+})
+export class ListaEstudiantes {
+  estudiantes = signal&lt;Estudiante[]&gt;([
+    {
+      id: 1,
+      nombre: 'Ana Torres',
+      correo: 'ana@correo.com',
+      programa: 'Sistemas'
+    }
+  ]);
+
+  total = computed(() =&gt; this.estudiantes().length);
+
+  agregarEjemplo() {
+    this.estudiantes.update(actual =&gt; [
+      ...actual,
+      {
+        id: Date.now(),
+        nombre: 'Nuevo estudiante',
+        correo: 'nuevo@correo.com',
+        programa: 'Sistemas'
+      }
+    ]);
+  }
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;h1&gt;Estudiantes ({{ total() }})&lt;/h1&gt;
+
+&lt;button type="button" (click)="agregarEjemplo()"&gt;
+  Agregar ejemplo
+&lt;/button&gt;
+
+@for (estudiante of estudiantes(); track estudiante.id) {
+  &lt;p&gt;{{ estudiante.nombre }}&lt;/p&gt;
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -14454,7 +15150,62 @@ export class BotonEliminar {
         ├── lista-estudiantes/
         └── formulario-estudiante/</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/estudiante-card/estudiante-card.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component, input, output } from '@angular/core';
+import { Estudiante } from '../../../models/estudiante';
+
+@Component({
+  selector: 'app-estudiante-card',
+  imports: [],
+  templateUrl: './estudiante-card.html',
+  styleUrl: './estudiante-card.css'
+})
+export class EstudianteCard {
+  estudiante = input.required&lt;Estudiante&gt;();
+  eliminar = output&lt;number&gt;();
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/estudiante-card/estudiante-card.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;article class="tarjeta"&gt;
+  &lt;h3&gt;{{ estudiante().nombre }}&lt;/h3&gt;
+  &lt;p&gt;{{ estudiante().correo }}&lt;/p&gt;
+  &lt;small&gt;{{ estudiante().programa }}&lt;/small&gt;
+
+  &lt;button
+    type="button"
+    (click)="eliminar.emit(estudiante().id)"
+  &gt;
+    Eliminar
+  &lt;/button&gt;
+&lt;/article&gt;</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>@for (estudiante of estudiantes(); track estudiante.id) {
+  &lt;app-estudiante-card
+    [estudiante]="estudiante"
+    (eliminar)="eliminarEstudiante($event)"
+  /&gt;
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -14602,7 +15353,97 @@ export class ListaEstudiantes {
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TERMINAL</span><code>Terminal</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>ng g s services/estudiantes --skip-tests</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/services/estudiantes.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Injectable, signal } from '@angular/core';
+import { Estudiante } from '../models/estudiante';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EstudiantesService {
+  private readonly lista = signal&lt;Estudiante[]&gt;([
+    {
+      id: 1,
+      nombre: 'Ana Torres',
+      correo: 'ana@correo.com',
+      programa: 'Sistemas'
+    }
+  ]);
+
+  readonly estudiantes = this.lista.asReadonly();
+
+  crear(datos: Omit&lt;Estudiante, 'id'&gt;) {
+    this.lista.update(actual =&gt; [
+      ...actual,
+      {
+        id: Date.now(),
+        ...datos
+      }
+    ]);
+  }
+
+  actualizar(cambio: Estudiante) {
+    this.lista.update(actual =&gt;
+      actual.map(estudiante =&gt;
+        estudiante.id === cambio.id ? cambio : estudiante
+      )
+    );
+  }
+
+  eliminar(id: number) {
+    this.lista.update(actual =&gt;
+      actual.filter(estudiante =&gt; estudiante.id !== id)
+    );
+  }
+
+  buscarPorId(id: number) {
+    return this.lista().find(estudiante =&gt; estudiante.id === id);
+  }
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component, inject } from '@angular/core';
+import { EstudianteCard } from '../estudiante-card/estudiante-card';
+import { EstudiantesService } from '../../../services/estudiantes';
+
+@Component({
+  selector: 'app-lista-estudiantes',
+  imports: [EstudianteCard],
+  templateUrl: './lista-estudiantes.html',
+  styleUrl: './lista-estudiantes.css'
+})
+export class ListaEstudiantes {
+  private servicio = inject(EstudiantesService);
+
+  estudiantes = this.servicio.estudiantes;
+
+  eliminarEstudiante(id: number) {
+    this.servicio.eliminar(id);
+  }
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -14823,7 +15664,77 @@ export class App {}</pre>
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/app.routes.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Routes } from '@angular/router';
+import { ListaEstudiantes } from './features/estudiantes/lista-estudiantes/lista-estudiantes';
+import { FormularioEstudiante } from './features/estudiantes/formulario-estudiante/formulario-estudiante';
+
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'estudiantes',
+    pathMatch: 'full'
+  },
+  {
+    path: 'estudiantes',
+    component: ListaEstudiantes
+  },
+  {
+    path: 'estudiantes/nuevo',
+    component: FormularioEstudiante
+  },
+  {
+    path: 'estudiantes/:id/editar',
+    component: FormularioEstudiante
+  }
+];</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/app.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterLink, RouterOutlet],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/app.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;header&gt;
+  &lt;a routerLink="/estudiantes"&gt;
+    Gestor de estudiantes
+  &lt;/a&gt;
+
+  &lt;a routerLink="/estudiantes/nuevo"&gt;
+    + Nuevo estudiante
+  &lt;/a&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;router-outlet /&gt;
+&lt;/main&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -14990,7 +15901,35 @@ export class App {}</pre>
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TREE</span><code>Estructura base que debes conservar</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>src/app/
+├── features/
+│   └── estudiantes/
+│       ├── estudiante-card/
+│       ├── lista-estudiantes/
+│       └── formulario-estudiante/
+├── models/
+│   └── estudiante.ts
+├── services/
+│   └── estudiantes.ts
+├── shared/
+├── app.ts
+├── app.html
+├── app.css
+├── app.routes.ts
+└── app.config.ts</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -16643,7 +17582,111 @@ tab = "perfil"</code>
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/formulario-estudiante/formulario-estudiante.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { EstudiantesService } from '../../../services/estudiantes';
+
+@Component({
+  selector: 'app-formulario-estudiante',
+  imports: [FormsModule, RouterLink],
+  templateUrl: './formulario-estudiante.html',
+  styleUrl: './formulario-estudiante.css'
+})
+export class FormularioEstudiante {
+  private servicio = inject(EstudiantesService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+
+  id = Number(this.route.snapshot.paramMap.get('id') ?? 0);
+
+  nombre = '';
+  correo = '';
+  programa = '';
+
+  constructor() {
+    if (this.id) {
+      const estudiante = this.servicio.buscarPorId(this.id);
+
+      if (estudiante) {
+        this.nombre = estudiante.nombre;
+        this.correo = estudiante.correo;
+        this.programa = estudiante.programa;
+      }
+    }
+  }
+
+  guardar() {
+    const datos = {
+      nombre: this.nombre.trim(),
+      correo: this.correo.trim(),
+      programa: this.programa.trim()
+    };
+
+    if (!datos.nombre || !datos.correo || !datos.programa) {
+      return;
+    }
+
+    if (this.id) {
+      this.servicio.actualizar({
+        id: this.id,
+        ...datos
+      });
+    } else {
+      this.servicio.crear(datos);
+    }
+
+    this.router.navigate(['/estudiantes']);
+  }
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/formulario-estudiante/formulario-estudiante.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;form (ngSubmit)="guardar()"&gt;
+  &lt;input
+    name="nombre"
+    [(ngModel)]="nombre"
+    placeholder="Nombre"
+    required
+  &gt;
+
+  &lt;input
+    name="correo"
+    type="email"
+    [(ngModel)]="correo"
+    placeholder="Correo"
+    required
+  &gt;
+
+  &lt;input
+    name="programa"
+    [(ngModel)]="programa"
+    placeholder="Programa"
+    required
+  &gt;
+
+  &lt;button type="submit"&gt;
+    {{ id ? 'Guardar cambios' : 'Registrar' }}
+  &lt;/button&gt;
+
+  &lt;a routerLink="/estudiantes"&gt;Cancelar&lt;/a&gt;
+&lt;/form&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -18013,7 +19056,73 @@ if (!response.ok) {
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/app.config.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+
+import { routes } from './app.routes';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient()
+  ]
+};</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/services/estudiantes.ts · agrega esta operación</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { HttpClient } from '@angular/common/http';
+import { inject } from '@angular/core';
+
+interface UsuarioApi {
+  id: number;
+  name: string;
+  email: string;
+  company: {
+    name: string;
+  };
+}
+
+// Dentro de EstudiantesService:
+private http = inject(HttpClient);
+
+obtenerUsuariosDemo() {
+  return this.http.get&lt;UsuarioApi[]&gt;(
+    'https://jsonplaceholder.typicode.com/users'
+  );
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts · ejemplo de consumo</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>cargarDesdeApi() {
+  this.servicio.obtenerUsuariosDemo().subscribe({
+    next: (usuarios) =&gt; {
+      console.table(usuarios);
+    },
+    error: (error) =&gt; {
+      console.error('No fue posible consultar la API', error);
+    }
+  });
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -18421,7 +19530,62 @@ this.api.obtener(id).subscribe(u =&gt; this.formulario.patchValue(u));</pre>
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/services/estudiantes.ts · CRUD en memoria</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>crear(datos: Omit&lt;Estudiante, 'id'&gt;) {
+  this.lista.update(actual =&gt; [
+    ...actual,
+    {
+      id: Date.now(),
+      ...datos
+    }
+  ]);
+}
+
+buscarPorId(id: number) {
+  return this.lista().find(estudiante =&gt; estudiante.id === id);
+}
+
+actualizar(cambio: Estudiante) {
+  this.lista.update(actual =&gt;
+    actual.map(estudiante =&gt;
+      estudiante.id === cambio.id ? cambio : estudiante
+    )
+  );
+}
+
+eliminar(id: number) {
+  this.lista.update(actual =&gt;
+    actual.filter(estudiante =&gt; estudiante.id !== id)
+  );
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>@if (estudiantes().length === 0) {
+  &lt;p&gt;No hay estudiantes registrados.&lt;/p&gt;
+} @else {
+  @for (estudiante of estudiantes(); track estudiante.id) {
+    &lt;app-estudiante-card
+      [estudiante]="estudiante"
+      (eliminar)="eliminarEstudiante($event)"
+    /&gt;
+  }
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -18740,7 +19904,65 @@ constructor() {
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts · búsqueda reactiva</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component, computed, inject, signal } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
+import { EstudiantesService } from '../../../services/estudiantes';
+
+@Component({
+  selector: 'app-lista-estudiantes',
+  imports: [ReactiveFormsModule],
+  templateUrl: './lista-estudiantes.html'
+})
+export class ListaEstudiantes {
+  private servicio = inject(EstudiantesService);
+
+  busqueda = new FormControl('', { nonNullable: true });
+  texto = signal('');
+
+  estudiantes = computed(() =&gt; {
+    const filtro = this.texto().toLowerCase().trim();
+
+    return this.servicio.estudiantes().filter(estudiante =&gt;
+      estudiante.nombre.toLowerCase().includes(filtro)
+    );
+  });
+
+  constructor() {
+    this.busqueda.valueChanges
+      .pipe(
+        debounceTime(300),
+        distinctUntilChanged()
+      )
+      .subscribe(valor =&gt; this.texto.set(valor));
+  }
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;input
+  type="search"
+  [formControl]="busqueda"
+  placeholder="Buscar estudiante"
+&gt;
+
+&lt;p&gt;Coincidencias: {{ estudiantes().length }}&lt;/p&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -19135,7 +20357,62 @@ this.router.navigate(['/login']);</pre>
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/services/auth.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Injectable, signal } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private readonly autenticado = signal(false);
+
+  readonly estaAutenticado = this.autenticado.asReadonly();
+
+  login(usuario: string, clave: string) {
+    const accesoValido =
+      usuario === 'admin' &amp;&amp; clave === '1234';
+
+    this.autenticado.set(accesoValido);
+
+    return accesoValido;
+  }
+
+  logout() {
+    this.autenticado.set(false);
+  }
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/guards/auth.guard.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { inject } from '@angular/core';
+import { CanActivateFn, Router } from '@angular/router';
+import { AuthService } from '../services/auth';
+
+export const authGuard: CanActivateFn = () =&gt; {
+  const auth = inject(AuthService);
+  const router = inject(Router);
+
+  if (auth.estaAutenticado()) {
+    return true;
+  }
+
+  return router.createUrlTree(['/login']);
+};</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -19249,7 +20526,60 @@ this.router.navigate(['/login']);</pre>
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/services/estudiantes.ts · manejo de error HTTP</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { catchError, throwError } from 'rxjs';
+
+// Dentro del servicio:
+obtenerUsuariosDemo() {
+  return this.http
+    .get&lt;UsuarioApi[]&gt;(
+      'https://jsonplaceholder.typicode.com/users'
+    )
+    .pipe(
+      catchError(error =&gt; {
+        console.error('Error HTTP', error);
+
+        return throwError(
+          () =&gt; new Error('No fue posible cargar los datos')
+        );
+      })
+    );
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts · estados</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>cargando = signal(false);
+error = signal('');
+
+cargar() {
+  this.cargando.set(true);
+  this.error.set('');
+
+  this.servicio.obtenerUsuariosDemo().subscribe({
+    next: () =&gt; {
+      this.cargando.set(false);
+    },
+    error: () =&gt; {
+      this.error.set('No fue posible cargar los estudiantes.');
+      this.cargando.set(false);
+    }
+  });
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -20739,7 +22069,45 @@ export class UsuariosApi {
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 MD</span><code>gestor-estudiantes/README.md · mapa del proyecto</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code># Gestor de estudiantes
+
+## Flujo principal
+
+Usuario
+  ↓
+Router
+  ↓
+Componente
+  ↓
+Servicio
+  ↓
+Estado / HTTP
+  ↓
+Componente
+  ↓
+Template
+
+## Conceptos usados
+- Component: pantallas y tarjetas
+- Forms: formulario de estudiante
+- Signals: estado de estudiantes
+- Service: lógica compartida
+- Router: navegación
+- HttpClient: petición HTTP
+- RxJS: búsqueda y flujo asíncrono</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -21260,7 +22628,44 @@ ng build</pre></div><div class="see-result angular-see-result v14"><div class="s
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 MD</span><code>gestor-estudiantes/notas/sintaxis-angular.md</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code># Sintaxis Angular usada en el proyecto
+
+@Component(...)
+- conecta clase, HTML y CSS.
+
+inject(EstudiantesService)
+- obtiene el servicio.
+
+signal(...)
+- guarda estado reactivo.
+
+@if
+- muestra u oculta bloques.
+
+@for
+- repite contenido.
+
+[(ngModel)]
+- sincroniza input y propiedad.
+
+routerLink
+- navega sin recargar.
+
+&lt;router-outlet /&gt;
+- lugar donde aparece la ruta activa.</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -21671,7 +23076,52 @@ aumentar() {
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 CSS</span><code>src/styles.css</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>:root {
+  font-family: Arial, sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: min(100% - 32px, 1000px);
+  margin: 32px auto;
+}
+
+.tarjeta,
+.formulario-card {
+  padding: 18px;
+  margin-top: 12px;
+  border: 1px solid #e4e8ef;
+  border-radius: 14px;
+  background: white;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -22084,7 +23534,69 @@ req.flush([
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>3 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/app.routes.ts</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'estudiantes',
+    pathMatch: 'full'
+  },
+  {
+    path: 'estudiantes',
+    component: ListaEstudiantes
+  },
+  {
+    path: 'estudiantes/nuevo',
+    component: FormularioEstudiante
+  },
+  {
+    path: 'estudiantes/:id/editar',
+    component: FormularioEstudiante
+  }
+];</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/services/estudiantes.ts · responsabilidades finales</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>export class EstudiantesService {
+  // 1. fuente de datos
+  // 2. buscar por id
+  // 3. crear
+  // 4. actualizar
+  // 5. eliminar
+  // 6. opcional: cargar desde API
+
+  // La UI no debe repetir estas responsabilidades.
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TREE</span><code>Flujo que debes poder explicar</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>Formulario
+  ↓ guardar()
+EstudiantesService
+  ↓ crea / actualiza
+Signal de estudiantes
+  ↓
+ListaEstudiantes
+  ↓ @for
+EstudianteCard</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -22304,7 +23816,65 @@ curso = 'Angular desde cero';
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/app.ts · base para retos cortos</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-root',
+  imports: [FormsModule],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {
+  curso = 'Angular desde cero';
+  mensaje = 'Sin guardar';
+  mostrarAviso = true;
+  nombre = '';
+
+  guardar() {
+    this.mensaje = 'Guardado';
+  }
+}</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/app.html · base para modificar</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;h1&gt;{{ curso }}&lt;/h1&gt;
+
+&lt;input
+  name="nombre"
+  [(ngModel)]="nombre"
+  placeholder="Escribe tu nombre"
+&gt;
+
+&lt;button
+  type="button"
+  [disabled]="nombre.length === 0"
+  (click)="guardar()"
+&gt;
+  Guardar
+&lt;/button&gt;
+
+&lt;p&gt;{{ mensaje }}&lt;/p&gt;
+
+@if (mostrarAviso) {
+  &lt;p&gt;Bienvenido a la práctica.&lt;/p&gt;
+}</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -22441,7 +24011,55 @@ curso = 'Angular desde cero';
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>2 bloques</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 TS</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.ts · mejora sugerida</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>programaSeleccionado = signal('');
+
+programas = [
+  'Todos',
+  'Sistemas',
+  'Diseño',
+  'Administración'
+];
+
+filtrados = computed(() =&gt; {
+  const programa = this.programaSeleccionado();
+
+  if (!programa || programa === 'Todos') {
+    return this.servicio.estudiantes();
+  }
+
+  return this.servicio.estudiantes().filter(
+    estudiante =&gt; estudiante.programa === programa
+  );
+});</code></pre>
+</div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 HTML</span><code>src/app/features/estudiantes/lista-estudiantes/lista-estudiantes.html</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code>&lt;select
+  #programa
+  (change)="programaSeleccionado.set(programa.value)"
+&gt;
+  @for (opcion of programas; track opcion) {
+    &lt;option [value]="opcion"&gt;
+      {{ opcion }}
+    &lt;/option&gt;
+  }
+&lt;/select&gt;</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -22595,7 +24213,42 @@ curso = 'Angular desde cero';
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 MD</span><code>gestor-estudiantes/README.md</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code># Gestor de estudiantes
+
+## Ejecutar
+npm install
+ng serve
+
+## Funcionalidades
+- Listar estudiantes
+- Registrar estudiante
+- Editar estudiante
+- Eliminar estudiante
+- Buscar estudiante
+- Navegar con Angular Router
+
+## Estructura
+- features/: pantallas y componentes
+- models/: tipos de datos
+- services/: lógica compartida
+- shared/: reutilización
+
+## Qué aprendí
+Escribe aquí con tus propias palabras cómo viaja un dato
+desde el formulario hasta la lista.</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -22727,7 +24380,33 @@ curso = 'Angular desde cero';
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 MD</span><code>gestor-estudiantes/notas/autoevaluacion.md</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code># Autoevaluación
+
+Responde sin mirar el código.
+
+1. ¿Qué diferencia hay entre componente y servicio?
+2. ¿Para qué sirve app.routes.ts?
+3. ¿Qué hace router-outlet?
+4. ¿Por qué FormsModule aparece en imports?
+5. ¿Qué diferencia hay entre signal y computed?
+6. ¿Qué problema resuelve @for?
+7. ¿Qué hace HttpClient?
+8. ¿Qué significa que HttpClient devuelva un Observable?
+9. ¿Dónde se guardan los datos del Gestor?
+10. Explica el recorrido de guardar un estudiante.</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
@@ -22879,7 +24558,59 @@ curso = 'Angular desde cero';
     ├── app.routes.ts
     └── app.config.ts</pre>
   </details>
-  <div class="project-before-write">
+  <div class="project-code-stack-v33">
+<div class="project-code-title-v33">
+  <div><span>💻 CÓDIGO BASE DE ESTA ETAPA</span><strong>No adivines qué escribir: parte de esta base y modifica solo lo que la lección explica.</strong></div>
+  <small>1 bloque</small>
+</div>
+<div class="project-code-note-v33"><strong>Cómo usarlo:</strong><span>ubica el archivo exacto → copia o escribe la base → guarda → prueba → continúa con el paso a paso. Si el archivo ya existía, conserva lo anterior salvo que la lección indique reemplazarlo.</span></div>
+<div class="project-file-code-v33">
+  <div class="project-file-code-head-v33">
+    <div><span>📄 MD</span><code>gestor-estudiantes/GLOSARIO.md</code></div>
+    <button class="copy" type="button">Copiar</button>
+  </div>
+  <pre><code># Glosario del Gestor de estudiantes
+
+## Component
+Pieza de interfaz con lógica, template y estilos.
+
+Ejemplo:
+ListaEstudiantes.
+
+## Service
+Lógica o datos compartidos.
+
+Ejemplo:
+EstudiantesService.
+
+## Signal
+Estado reactivo.
+
+Ejemplo:
+lista de estudiantes.
+
+## Router
+Relaciona una URL con una pantalla.
+
+Ejemplo:
+/estudiantes/nuevo.
+
+## Binding
+Conecta TypeScript con HTML.
+
+Ejemplo:
+{{ estudiante.nombre }}.
+
+## HttpClient
+Cliente HTTP de Angular.
+
+Ejemplo:
+consultar una API.
+
+Agrega al menos 10 términos más usando ejemplos
+reales de tu proyecto.</code></pre>
+</div>
+</div><div class="project-before-write">
     <strong>Antes de escribir código</strong>
     <ol>
       <li>Confirma que estás en el proyecto correcto y que <code>ng serve</code> funcionaba al terminar la lección anterior.</li>
