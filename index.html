@@ -615,7 +615,7 @@ function projectCreationChoicesBlock(l){if(l.id!==5)return '';return `<div class
 ? Which AI tools should Angular integrate with? None</code></pre><p class="muted" style="margin-bottom:0"><b>Resumen:</b> CSS → No → None. Después Angular termina de crear el proyecto.</p></div>`}
 
 function beginnerProjectWalkthroughBlock(l){
-  if(l.id===5)return \`<div class="card flat" style="margin-top:16px">
+  if(l.id===5)return `<div class="card flat" style="margin-top:16px">
     <div class="mini-title">Proyecto paso a paso · desde la terminal</div>
     <h3 style="margin:6px 0">Después de crear el proyecto</h3>
 
@@ -629,9 +629,9 @@ function beginnerProjectWalkthroughBlock(l){
     <div class="flow" style="margin-top:14px"><span>Tu computador</span><i data-lucide="arrow-right" width="16"></i><span>ng serve</span><i data-lucide="arrow-right" width="16"></i><span>Angular</span><i data-lucide="arrow-right" width="16"></i><span>localhost:4200</span><i data-lucide="arrow-right" width="16"></i><span>Navegador</span></div>
 
     <div class="callout warn" style="margin-top:14px"><i data-lucide="terminal" width="18"></i><div><strong>Deja la terminal abierta</strong><p>Mientras trabajas, deja <code>ng serve</code> ejecutándose. Cuando guardas un archivo, Angular recompila y actualiza la aplicación.</p></div></div>
-  </div>\`;
+  </div>`;
 
-  if(l.id===6)return \`<div class="card flat" style="margin-top:16px">
+  if(l.id===6)return `<div class="card flat" style="margin-top:16px">
     <div class="mini-title">Primero entiende los archivos</div>
     <div class="component-meta">
       <div class="meta-item"><code>app.ts</code><strong>Lógica</strong><p>Contiene la clase del componente, sus datos, métodos y configuración.</p></div>
@@ -647,9 +647,9 @@ function beginnerProjectWalkthroughBlock(l){
 }</code></pre><p>Si el título se centra, confirmas que <code>app.css</code> controla la apariencia.</p></div></div>
 
     <div class="callout warn" style="margin-top:14px"><i data-lucide="triangle-alert" width="18"></i><div><strong>NG8113: RouterOutlet no usado</strong><p>Es una <b>advertencia, no un error</b>. Si todavía no usas rutas y aparece <code>imports: [RouterOutlet]</code>, puedes quitar temporalmente <code>RouterOutlet</code> y dejar <code>imports: []</code>. Más adelante lo volveremos a usar.</p></div></div>
-  </div>\`;
+  </div>`;
 
-  if(l.id===7)return \`<div class="card flat" style="margin-top:16px">
+  if(l.id===7)return `<div class="card flat" style="margin-top:16px">
     <div class="mini-title">app.ts · línea por línea</div>
 
     <div class="callout" style="margin-top:10px"><i data-lucide="package-open" width="18"></i><div><strong><code>import { Component } from '@angular/core';</code></strong><p><code>import</code> trae <code>Component</code> desde Angular para poder usar <code>@Component</code>.</p></div></div>
@@ -668,9 +668,9 @@ function beginnerProjectWalkthroughBlock(l){
     <div class="callout warn" style="margin-top:14px"><i data-lucide="split" width="18"></i><div><strong>No confundas <code>import</code> con <code>imports</code></strong><p><code>import ... from ...</code> es de TypeScript y trae algo al archivo. <code>imports: []</code> es configuración de Angular y declara qué puede usar el template.</p></div></div>
 
     <div class="card flat" style="margin-top:14px"><div class="mini-title">Cómo se conectan los archivos</div><div class="flow"><span>app.ts</span><i data-lucide="arrow-right" width="16"></i><span>templateUrl</span><i data-lucide="arrow-right" width="16"></i><span>app.html</span></div><div class="flow" style="margin-top:8px"><span>app.ts</span><i data-lucide="arrow-right" width="16"></i><span>styleUrl</span><i data-lucide="arrow-right" width="16"></i><span>app.css</span></div><p class="muted" style="margin-bottom:0"><b>Forma fácil:</b> app.ts = lógica · app.html = estructura · app.css = diseño.</p></div>
-  </div>\`;
+  </div>`;
 
-  if(l.id===8)return \`<div class="card flat" style="margin-top:16px">
+  if(l.id===8)return `<div class="card flat" style="margin-top:16px">
     <div class="mini-title">Listas y condiciones · paso a paso</div>
 
     <div class="callout" style="margin-top:10px"><i data-lucide="list" width="18"></i><div><strong>Objeto vs Array</strong><p><code>{ }</code> representa un objeto. <code>[ ]</code> representa una lista o array.</p><pre><code>estudiantes = [
@@ -695,9 +695,9 @@ function beginnerProjectWalkthroughBlock(l){
 }</code></pre></div></div>
 
     <div class="callout warn" style="margin-top:14px"><i data-lucide="toggle-left" width="18"></i><div><strong>¿Qué es un boolean?</strong><p>Es un tipo de dato con solo dos valores: <code>true</code> o <code>false</code>. En este proyecto lo usamos para saber si un estudiante está activo.</p></div></div>
-  </div>\`;
+  </div>`;
 
-  if(l.id===9)return \`<div class="card flat" style="margin-top:16px">
+  if(l.id===9)return `<div class="card flat" style="margin-top:16px">
     <div class="mini-title">TypeScript → HTML · desde cero</div>
 
     <div class="callout" style="margin-top:10px"><i data-lucide="type" width="18"></i><div><strong>Primero una propiedad</strong><pre><code>titulo = 'Gestor de estudiantes';</code></pre><p><code>titulo</code> es una propiedad de la clase <code>App</code>. Guarda un dato que luego podemos mostrar.</p></div></div>
@@ -723,7 +723,7 @@ function beginnerProjectWalkthroughBlock(l){
 {{ estudiante.edad }}</code></pre><p><code>estudiante.nombre</code> significa: “del objeto estudiante, dame la propiedad nombre”.</p></div></div>
 
     <div class="callout warn" style="margin-top:14px"><i data-lucide="lightbulb" width="18"></i><div><strong>Qué debes recordar</strong><p>TypeScript guarda los datos. Angular los conecta con el HTML. La interpolación <code>{{ }}</code> los muestra.</p></div></div>
-  </div>\`;
+  </div>`;
 
   return '';
 }
