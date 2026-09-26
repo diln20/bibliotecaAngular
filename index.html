@@ -417,7 +417,7 @@ ng serve`,terminal:true,exercise:'Crea un proyecto llamado laboratorio-angular, 
 ├─ main.ts
 ├─ index.html
 └─ styles.css`,tree:true,exercise:'Ubica app.ts, app.html y app.css. Escribe en una frase para qué sirve cada uno.',solution:'app.ts = lógica/configuración; app.html = estructura visible; app.css = apariencia.'},
-  {id:7,group:'angular',title:'Componentes',time:'35 min',level:'BÁSICO',icon:'component',summary:'Entiende el componente principal línea por línea: import, @Component, selector, app-root, imports, templateUrl, styleUrl y export class.',concepts:[['import','Trae algo desde otro archivo o paquete para poder usarlo.'],['@Component','Decorador que le dice a Angular que una clase es un componente.'],['selector','Nombre HTML con el que Angular identifica el componente.'],['app-root','Selector del componente raíz: el lugar donde se monta la aplicación principal.'],['imports','Dependencias que el template puede utilizar.'],['templateUrl','Ruta del archivo HTML del componente.'],['styleUrl','Ruta del archivo CSS del componente.'],['export class','Clase donde viven los datos y métodos del componente.']],flow:['index.html','<app-root>','selector: app-root','App','app.html + app.css'],path:'src/app/app.ts',file:'app.ts',lang:'typescript',code:`import { Component } from '@angular/core';
+  {id:7,group:'angular',title:'Componentes',time:'50 min',level:'BÁSICO',icon:'component',summary:'Entiende el componente principal y aprende a crear tu primer componente separado: TarjetaEstudiante, su selector, archivos, imports y relación padre-hijo.',concepts:[['import','Trae algo desde otro archivo o paquete para poder usarlo.'],['@Component','Decorador que le dice a Angular que una clase es un componente.'],['selector','Nombre HTML con el que Angular identifica el componente.'],['app-root','Selector del componente raíz: el lugar donde se monta la aplicación principal.'],['imports','Dependencias que el template puede utilizar.'],['templateUrl','Ruta del archivo HTML del componente.'],['styleUrl','Ruta del archivo CSS del componente.'],['export class','Clase donde viven los datos y métodos del componente.'],['ng generate component','Comando de Angular CLI para crear automáticamente un componente y sus archivos.'],['Componente padre','Componente que contiene o utiliza a otro componente.'],['Componente hijo','Componente utilizado dentro del template de otro componente.']],flow:['App padre','imports TarjetaEstudiante','<app-tarjeta-estudiante>','TarjetaEstudiante hijo','HTML + CSS propios'],path:'src/app/app.ts + src/app/components/tarjeta-estudiante/',file:'app.ts / tarjeta-estudiante.ts',lang:'typescript',code:`import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -426,7 +426,7 @@ ng serve`,terminal:true,exercise:'Crea un proyecto llamado laboratorio-angular, 
   styleUrl: './app.css'
 })
 export class App {
-}`,exercise:'Explica con tus palabras qué hacen selector, templateUrl, styleUrl e imports.',solution:'selector identifica la etiqueta; templateUrl apunta al HTML; styleUrl al CSS; imports lista dependencias del template.'},
+}`,exercise:'Crea el componente tarjeta-estudiante con Angular CLI, impórtalo en App y muestra su selector dentro de app.html.',solution:'ng g c components/tarjeta-estudiante --skip-tests; importa TarjetaEstudiante en app.ts, agrégalo a imports y usa <app-tarjeta-estudiante></app-tarjeta-estudiante>.'},
   {id:8,group:'angular',title:'Templates y control flow',time:'35 min',level:'BÁSICO',icon:'layout-template',summary:'Trabaja con listas y condiciones. Aprende arrays, @for, track, @if, @else y booleanos usando estudiantes.',concepts:[['Array []','Una lista que puede contener varios elementos.'],['@for','Repite HTML por cada elemento de una lista.'],['track','Ayuda a Angular a identificar cada elemento de la lista.'],['@if','Muestra un bloque cuando una condición es verdadera.'],['@else','Muestra otra opción cuando la condición es falsa.'],['boolean','Tipo que solo puede ser true o false.']],flow:['estudiantes[]','@for','estudiante','@if activo','Activo / Inactivo'],path:'src/app/app.html',file:'app.html',lang:'html',code:`@for (estudiante of estudiantes; track estudiante.correo) {
   <div class="estudiante">
     <h3>{{ estudiante.nombre }}</h3>
@@ -461,7 +461,7 @@ estudiante = {
   {id:15,group:'intermediate',title:'Servicios y Dependency Injection',time:'34 min',level:'INTERMEDIO',icon:'layers-3',summary:'Saca lógica compartida de los componentes. Un servicio puede gestionar datos y Angular lo entrega mediante inyección de dependencias.',concepts:[['Servicio','Clase enfocada en una responsabilidad reutilizable.'],['inject()','Solicita una dependencia administrada por Angular.']],flow:['Componente','Servicio','Fuente de datos'],path:'src/app/services/estudiantes.service.ts',file:'estudiantes.service.ts',lang:'typescript',code:`import { Injectable, signal } from '@angular/core';\n\n@Injectable({ providedIn: 'root' })\nexport class EstudiantesService {\n  estudiantes = signal([\n    { id: 1, nombre: 'Ana' }\n  ]);\n}\n\n// En un componente:\n// private estudiantesService = inject(EstudiantesService);`,exercise:'Crea un servicio CursosService con una lista de cursos y consúmelo desde un componente.',solution:'Genera el servicio, declara providedIn root y usa inject(CursosService) en el componente.'},
   {id:16,group:'intermediate',title:'HTTP y APIs',time:'38 min',level:'INTERMEDIO',icon:'server',summary:'Consume datos reales con HttpClient. Distingue loading, success y error, y aprende dónde debe vivir la petición.',concepts:[['HttpClient','Cliente HTTP integrado con Angular para GET, POST, PUT/PATCH y DELETE.'],['Estados de UI','Toda petición debería pensar en carga, datos vacíos, éxito y error.']],flow:['Componente','Servicio + HttpClient','API REST'],path:'src/app/services/estudiantes.service.ts',file:'estudiantes.service.ts',lang:'typescript',code:`import { HttpClient } from '@angular/common/http';\nimport { inject } from '@angular/core';\n\nexport class EstudiantesService {\n  private http = inject(HttpClient);\n\n  listar() {\n    return this.http.get<Estudiante[]>('/api/estudiantes');\n  }\n}`,exercise:'Crea un método listarCursos() que haga GET a /api/cursos y tipa la respuesta.',solution:`listarCursos(){ return this.http.get<Curso[]>('/api/cursos'); }`},
   {id:17,group:'intermediate',title:'Routing y páginas',time:'36 min',level:'INTERMEDIO',icon:'route',summary:'Convierte una SPA en una aplicación con rutas. Relaciona URL, componente de página, routerLink y router-outlet.',concepts:[['Routes','Mapa que relaciona una URL con un componente.'],['router-outlet','Zona donde Angular renderiza la página correspondiente a la ruta actual.']],flow:['URL','Router','Componente de página'],path:'src/app/app.routes.ts',file:'app.routes.ts',lang:'typescript',code:`import { Routes } from '@angular/router';\nimport { InicioPage } from './pages/inicio/inicio.page';\nimport { EstudiantesPage } from './pages/estudiantes/estudiantes.page';\n\nexport const routes: Routes = [\n  { path: '', component: InicioPage },\n  { path: 'estudiantes', component: EstudiantesPage }\n];`,exercise:'Agrega una ruta /cursos que renderice CursosPage.',solution:`{ path:'cursos', component:CursosPage }`},
-  {id:18,group:'intermediate',title:'Formularios en Angular 22',time:'70 min',level:'INTERMEDIO',icon:'clipboard-list',summary:'Construye un formulario completo: conecta inputs con TypeScript, agrega estudiantes, valida campos y controla cuándo se puede enviar.',concepts:[['FormsModule','Habilita las herramientas de formularios template-driven como ngModel y ngSubmit.'],['[(ngModel)]','Conecta un input con una propiedad de TypeScript en dos direcciones.'],['name','Identifica cada control dentro del formulario.'],['(ngSubmit)','Ejecuta un método cuando se envía el formulario.'],['push()','Agrega un elemento al final de un array.'],['++','Incrementa un valor numérico en 1.'],['ngForm','Representa el estado completo del formulario en Template-driven Forms.'],['required','Hace obligatorio un campo.'],['email','Valida que el valor tenga formato de correo.'],['min','Define el valor mínimo permitido para un input numérico.'],['valid / invalid','Indican si un control o formulario cumple o no sus reglas.'],['touched','Indica que el usuario entró al campo y luego salió.'],['[disabled]','Controla desde Angular si un elemento HTML queda deshabilitado.'],['&&','Operador lógico Y: ambas condiciones deben cumplirse.'],['Template-driven','Enfoque sencillo para comenzar con formularios pequeños.'],['Reactive Forms','Enfoque más explícito para formularios con mayor lógica y validación.'],['Signal Forms','Alternativa moderna basada en signals para modelar formularios reactivos.']],flow:['Usuario escribe','ngModel actualiza datos','Angular valida','¿formulario válido?','ngSubmit','push()','@for actualiza la vista'],path:'src/app/app.ts + src/app/app.html + src/app/app.css',file:'app.ts / app.html / app.css',lang:'html',code:`<form
+  {id:18,group:'intermediate',title:'Formularios en Angular 22',time:'90 min',level:'INTERMEDIO',icon:'clipboard-list',summary:'Construye un formulario completo: agrega, valida y edita estudiantes. Aprende modo agregar/editar, decisiones con if/else y completa un CRUD básico.',concepts:[['FormsModule','Habilita las herramientas de formularios template-driven como ngModel y ngSubmit.'],['[(ngModel)]','Conecta un input con una propiedad de TypeScript en dos direcciones.'],['name','Identifica cada control dentro del formulario.'],['(ngSubmit)','Ejecuta un método cuando se envía el formulario.'],['push()','Agrega un elemento al final de un array.'],['++','Incrementa un valor numérico en 1.'],['ngForm','Representa el estado completo del formulario en Template-driven Forms.'],['required','Hace obligatorio un campo.'],['email','Valida que el valor tenga formato de correo.'],['min','Define el valor mínimo permitido para un input numérico.'],['valid / invalid','Indican si un control o formulario cumple o no sus reglas.'],['touched','Indica que el usuario entró al campo y luego salió.'],['[disabled]','Controla desde Angular si un elemento HTML queda deshabilitado.'],['&&','Operador lógico Y: ambas condiciones deben cumplirse.'],['number | null','Tipo unión: una variable puede guardar un número o null.'],['=== / !==','Comparan si dos valores son iguales o diferentes.'],['if / else','Permite ejecutar una lógica u otra según una condición.'],['CRUD','Create, Read, Update y Delete: crear, leer, actualizar y eliminar.']],flow:['Formulario','validar','Agregar o Editar','actualizar estudiantes[]','@for refleja cambios'],path:'src/app/app.ts + src/app/app.html + src/app/app.css',file:'app.ts / app.html / app.css',lang:'html',code:`<form
   #formularioEstudiante="ngForm"
   (ngSubmit)="agregarEstudiante()"
 >
@@ -481,9 +481,13 @@ estudiante = {
     type="submit"
     [disabled]="formularioEstudiante.invalid"
   >
-    Agregar estudiante
+    @if (indiceEditando === null) {
+      Agregar estudiante
+    } @else {
+      Guardar cambios
+    }
   </button>
-</form>`,exercise:'Valida nombre, correo y edad. Muestra mensajes después de tocar cada campo y deshabilita el botón mientras el formulario sea inválido.',solution:'Usa #formularioEstudiante="ngForm", referencias #campo="ngModel", required/email/min, @if con invalid && touched y [disabled]="formularioEstudiante.invalid".'},
+</form>`,exercise:'Completa el CRUD: agrega, valida, edita, guarda cambios, cancela edición y elimina estudiantes.',solution:'Usa indiceEditando:number|null para distinguir agregar/editar, carga datos con editarEstudiante(), actualiza el elemento en else y vuelve indiceEditando a null al guardar o cancelar.'},
   {id:19,group:'intermediate',title:'RxJS y Observables esenciales',time:'34 min',level:'INTERMEDIO',icon:'radio-tower',summary:'HttpClient y muchas APIs Angular trabajan con Observables. Aprende la idea de flujo, pipe, map y subscribe sin complicarlo innecesariamente.',concepts:[['Observable','Fuente que puede emitir valores a lo largo del tiempo.'],['pipe()','Encadena operadores para transformar o controlar el flujo.']],flow:['Observable','Operadores','Suscriptor / template'],path:'src/app/services/datos.service.ts',file:'datos.service.ts',lang:'typescript',code:`this.http.get<Estudiante[]>('/api/estudiantes')\n  .pipe(\n    map(lista => lista.filter(e => e.activo))\n  )\n  .subscribe({\n    next: datos => console.log(datos),\n    error: err => console.error(err)\n  });`,exercise:'Explica con tus palabras la diferencia entre Promise y Observable.',solution:'Una Promise produce un resultado futuro único; un Observable puede emitir cero, uno o muchos valores y se compone con operadores.'},
   {id:20,group:'intermediate',title:'Comunicación entre componentes',time:'32 min',level:'INTERMEDIO',icon:'messages-square',summary:'Aprende a pasar datos de padre a hijo y eventos de hijo a padre sin acoplar componentes.',concepts:[['input()','Expone un valor que el padre entrega al hijo.'],['output()','Permite al hijo emitir un evento hacia el padre.']],flow:['Padre','input → hijo','output → padre'],path:'src/app/components/tarjeta-estudiante/tarjeta-estudiante.ts',file:'tarjeta-estudiante.ts',lang:'typescript',code:`import { Component, input, output } from '@angular/core';\n\nexport class TarjetaEstudiante {\n  nombre = input.required<string>();\n  eliminar = output<number>();\n\n  solicitarEliminar(id: number) {\n    this.eliminar.emit(id);\n  }\n}`,exercise:'Crea un componente CursoCard que reciba titulo y emita seleccionar.',solution:'Define titulo = input.required<string>() y seleccionar = output<void>(); luego emitir seleccionar.emit().' },
   {id:21,group:'intermediate',title:'Lifecycle y render',time:'28 min',level:'INTERMEDIO',icon:'refresh-cw',summary:'Entiende cuándo se crea, actualiza y destruye un componente. Usa hooks solo cuando existe una necesidad concreta.',concepts:[['ngOnInit','Momento clásico para lógica de inicialización.'],['ngOnDestroy / cleanup','Libera recursos que no deben sobrevivir al componente.']],flow:['Crear','Actualizar','Destruir'],path:'src/app/components/perfil/perfil.ts',file:'perfil.ts',lang:'typescript',code:`export class PerfilComponent implements OnInit, OnDestroy {\n  ngOnInit() {\n    console.log('Componente listo');\n  }\n\n  ngOnDestroy() {\n    console.log('Liberar recursos');\n  }\n}`,exercise:'Anota un ejemplo real de algo que debería limpiarse al destruir un componente.',solution:'Una suscripción manual, listener global, intervalo o recurso externo creado por el componente.'},
@@ -495,7 +499,7 @@ estudiante = {
   {id:27,group:'advanced',title:'Proyecto final · Gestor de estudiantes',time:'90+ min',level:'AVANZADO',icon:'rocket',summary:'Integra componentes, signals, servicios, HTTP, routing, formularios y validación en una aplicación coherente.',concepts:[['Objetivo','CRUD educativo con listado, detalle, formulario y navegación.'],['Arquitectura','Feature estudiantes + servicio + páginas + componentes reutilizables.']],flow:['Lista','Crear / editar','API + estado + rutas'],path:'src/app/features/estudiantes/',file:'proyecto final',lang:'text',code:`RUTAS\n/estudiantes            → listado\n/estudiantes/nuevo      → crear\n/estudiantes/:id        → detalle\n/estudiantes/:id/editar → editar\n\nFEATURE\nfeatures/estudiantes/\n├─ pages/\n├─ components/\n├─ data/\n└─ models/`,tree:true,exercise:'Construye la aplicación por etapas: modelo → listado → servicio → formulario → rutas → API → estados de carga/error → validación → pruebas.',solution:'No copies una solución completa de una vez. Implementa una etapa, pruébala y solo entonces continúa con la siguiente.'}
 ];
 
-const sourceConceptCatalog = [{"id":1,"title":"Cómo funciona una app web","group":"fundamentals","icon":"globe-2","concepts":[["Navegador","Interpreta HTML/CSS, ejecuta JavaScript y muestra la interfaz."],["Servidor / API","Entrega archivos o datos; Angular consume esos datos mediante HTTP."]]},{"id":2,"title":"JavaScript esencial para Angular","group":"fundamentals","icon":"braces","concepts":[["Objetos y arrays","Gran parte del estado de una app se modela como objetos y listas."],["Funciones y async","Eventos, servicios y peticiones dependen de funciones y código asíncrono."]]},{"id":3,"title":"TypeScript desde cero","group":"fundamentals","icon":"file-type-2","concepts":[["Tipos","string, number, boolean, arrays, objetos y uniones describen datos."],["Interfaces","Definen la forma de objetos como Estudiante, Usuario o Curso."]]},{"id":4,"title":"Instalación y herramientas","group":"fundamentals","icon":"terminal","concepts":[["Angular CLI","Crea, sirve, compila y mantiene proyectos Angular."],["Node.js + npm","Angular CLI usa Node.js y npm para ejecutar herramientas e instalar dependencias."]]},{"id":5,"title":"Crear tu primer proyecto","group":"fundamentals","icon":"package-plus","concepts":[["ng new","Crea un proyecto Angular nuevo."],["CSS","Cuando Angular pregunte por estilos, elige CSS."],["SSR / SSG","Para este curso responde N (No). Así usaremos el renderizado normal en el navegador."],["AI tools","Selecciona None. Estas integraciones son opcionales y no se necesitan para el curso."],["ng serve","Inicia la aplicación local para verla en el navegador."]]},{"id":6,"title":"Estructura de carpetas","group":"fundamentals","icon":"folder-tree","concepts":[["src/app","Aquí vive la mayor parte de tu aplicación: componentes, servicios, páginas y modelos."],["main.ts y app.config.ts","main.ts inicia Angular; app.config.ts registra configuración y providers globales."]]},{"id":7,"title":"Componentes","group":"angular","icon":"component","concepts":[["@Component","Metadatos que indican selector, template, estilos e imports."],["Standalone","Los componentes modernos pueden declarar sus dependencias directamente mediante imports."]]},{"id":8,"title":"Templates y control flow","group":"angular","icon":"layout-template","concepts":[["@if","Renderiza una parte del template cuando una condición se cumple."],["@for","Repite elementos y puede usar track para identificar cada registro."]]},{"id":9,"title":"Data Binding","group":"angular","icon":"arrow-left-right","concepts":[["De TS hacia HTML","{{ valor }} y [propiedad] envían datos a la vista."],["De HTML hacia TS","(evento) ejecuta métodos; [(ngModel)] sincroniza en ambas direcciones."]]},{"id":10,"title":"Eventos y formularios simples","group":"angular","icon":"mouse-pointer-click","concepts":[["Event binding","(click) permite ejecutar un método cuando el usuario hace clic."],["$index","Indica la posición actual de un elemento dentro de @for."],["splice()","Permite eliminar elementos de un array desde una posición."],["id","Identifica un registro sin depender de la posición que ocupa en el array."]]},{"id":11,"title":"Directivas, clases y estilos","group":"angular","icon":"paintbrush","concepts":[["[class] / [style]","Asigna apariencia según el estado del componente."],["Directivas","Añaden comportamiento a elementos y componentes."]]},{"id":12,"title":"Pipes","group":"angular","icon":"filter","concepts":[["Pipes integrados","date, currency, percent, uppercase y otros."],["Presentación","El pipe cambia cómo se ve un valor, no el valor almacenado."]]},{"id":13,"title":"Signals","group":"intermediate","icon":"activity","concepts":[["signal()","Envuelve un valor reactivo. Se lee llamándolo como función."],["set / update","set reemplaza el valor; update calcula el siguiente usando el actual."]]},{"id":14,"title":"computed() y effect()","group":"intermediate","icon":"network","concepts":[["computed()","Calcula un valor a partir de otros signals y se actualiza automáticamente."],["effect()","Ejecuta lógica cuando cambian los signals leídos dentro del efecto."]]},{"id":15,"title":"Servicios y Dependency Injection","group":"intermediate","icon":"layers-3","concepts":[["Servicio","Clase enfocada en una responsabilidad reutilizable."],["inject()","Solicita una dependencia administrada por Angular."]]},{"id":16,"title":"HTTP y APIs","group":"intermediate","icon":"server","concepts":[["HttpClient","Cliente HTTP integrado con Angular para GET, POST, PUT/PATCH y DELETE."],["Estados de UI","Toda petición debería pensar en carga, datos vacíos, éxito y error."]]},{"id":17,"title":"Routing y páginas","group":"intermediate","icon":"route","concepts":[["Routes","Mapa que relaciona una URL con un componente."],["router-outlet","Zona donde Angular renderiza la página correspondiente a la ruta actual."]]},{"id":18,"title":"Formularios en Angular 22","group":"intermediate","icon":"clipboard-list","concepts":[["FormsModule","Habilita ngModel y otras herramientas de formularios template-driven."],["[(ngModel)]","Sincroniza el valor entre el input y TypeScript."],["ngForm","Permite consultar el estado del formulario."],["required / email / min","Reglas sencillas para validar campos."],["valid / invalid / touched","Estados que ayudan a decidir cuándo mostrar errores."],["[disabled]","Permite bloquear el botón mientras el formulario sea inválido."],["(ngSubmit)","Ejecuta lógica al enviar el formulario."],["push()","Agrega el nuevo objeto al array."]]},{"id":19,"title":"RxJS y Observables esenciales","group":"intermediate","icon":"radio-tower","concepts":[["Observable","Fuente que puede emitir valores a lo largo del tiempo."],["pipe()","Encadena operadores para transformar o controlar el flujo."]]},{"id":20,"title":"Comunicación entre componentes","group":"intermediate","icon":"messages-square","concepts":[["input()","Expone un valor que el padre entrega al hijo."],["output()","Permite al hijo emitir un evento hacia el padre."]]},{"id":21,"title":"Lifecycle y render","group":"intermediate","icon":"refresh-cw","concepts":[["ngOnInit","Momento clásico para lógica de inicialización."],["ngOnDestroy / cleanup","Libera recursos que no deben sobrevivir al componente."]]},{"id":22,"title":"Arquitectura por features","group":"advanced","icon":"blocks","concepts":[["Feature-first","Agrupa archivos por funcionalidad: estudiantes, cursos, autenticación."],["Shared","Solo elementos realmente reutilizables entre diferentes features."]]},{"id":23,"title":"Testing","group":"advanced","icon":"test-tube-2","concepts":[["Arrange / Act / Assert","Prepara datos, ejecuta acción y comprueba resultado."],["Aislamiento","Testea primero lógica pura; renderiza DOM cuando el comportamiento realmente depende de la interfaz."]]},{"id":24,"title":"Rendimiento y buenas prácticas","group":"advanced","icon":"gauge","concepts":[["track","Ayuda a Angular a identificar elementos de listas de forma estable."],["Lazy loading","Carga funcionalidades cuando realmente se necesitan."]]},{"id":25,"title":"Accesibilidad","group":"advanced","icon":"accessibility","concepts":[["Semántica","Usa button para acciones, label para campos y encabezados en orden lógico."],["Focus","Toda interacción debe ser accesible con teclado y mostrar focus visible."]]},{"id":26,"title":"Build y despliegue","group":"advanced","icon":"cloud-upload","concepts":[["ng build","Genera una versión optimizada para producción."],["Deploy","Los archivos compilados pueden servirse desde un hosting web compatible."]]},{"id":27,"title":"Proyecto final · Gestor de estudiantes","group":"advanced","icon":"rocket","concepts":[["Objetivo","CRUD educativo con listado, detalle, formulario y navegación."],["Arquitectura","Feature estudiantes + servicio + páginas + componentes reutilizables."]]}];
+const sourceConceptCatalog = [{"id":1,"title":"Cómo funciona una app web","group":"fundamentals","icon":"globe-2","concepts":[["Navegador","Interpreta HTML/CSS, ejecuta JavaScript y muestra la interfaz."],["Servidor / API","Entrega archivos o datos; Angular consume esos datos mediante HTTP."]]},{"id":2,"title":"JavaScript esencial para Angular","group":"fundamentals","icon":"braces","concepts":[["Objetos y arrays","Gran parte del estado de una app se modela como objetos y listas."],["Funciones y async","Eventos, servicios y peticiones dependen de funciones y código asíncrono."]]},{"id":3,"title":"TypeScript desde cero","group":"fundamentals","icon":"file-type-2","concepts":[["Tipos","string, number, boolean, arrays, objetos y uniones describen datos."],["Interfaces","Definen la forma de objetos como Estudiante, Usuario o Curso."]]},{"id":4,"title":"Instalación y herramientas","group":"fundamentals","icon":"terminal","concepts":[["Angular CLI","Crea, sirve, compila y mantiene proyectos Angular."],["Node.js + npm","Angular CLI usa Node.js y npm para ejecutar herramientas e instalar dependencias."]]},{"id":5,"title":"Crear tu primer proyecto","group":"fundamentals","icon":"package-plus","concepts":[["ng new","Crea un proyecto Angular nuevo."],["CSS","Cuando Angular pregunte por estilos, elige CSS."],["SSR / SSG","Para este curso responde N (No). Así usaremos el renderizado normal en el navegador."],["AI tools","Selecciona None. Estas integraciones son opcionales y no se necesitan para el curso."],["ng serve","Inicia la aplicación local para verla en el navegador."]]},{"id":6,"title":"Estructura de carpetas","group":"fundamentals","icon":"folder-tree","concepts":[["src/app","Aquí vive la mayor parte de tu aplicación: componentes, servicios, páginas y modelos."],["main.ts y app.config.ts","main.ts inicia Angular; app.config.ts registra configuración y providers globales."]]},{"id":7,"title":"Componentes","group":"angular","icon":"component","concepts":[["@Component","Metadatos que indican selector, template, estilos e imports."],["ng generate component","Crea automáticamente un nuevo componente con Angular CLI."],["selector","Permite usar el componente mediante una etiqueta HTML personalizada."],["Padre e hijo","Un componente puede contener e importar otros componentes."]]},{"id":8,"title":"Templates y control flow","group":"angular","icon":"layout-template","concepts":[["@if","Renderiza una parte del template cuando una condición se cumple."],["@for","Repite elementos y puede usar track para identificar cada registro."]]},{"id":9,"title":"Data Binding","group":"angular","icon":"arrow-left-right","concepts":[["De TS hacia HTML","{{ valor }} y [propiedad] envían datos a la vista."],["De HTML hacia TS","(evento) ejecuta métodos; [(ngModel)] sincroniza en ambas direcciones."]]},{"id":10,"title":"Eventos y formularios simples","group":"angular","icon":"mouse-pointer-click","concepts":[["Event binding","(click) permite ejecutar un método cuando el usuario hace clic."],["$index","Indica la posición actual de un elemento dentro de @for."],["splice()","Permite eliminar elementos de un array desde una posición."],["id","Identifica un registro sin depender de la posición que ocupa en el array."]]},{"id":11,"title":"Directivas, clases y estilos","group":"angular","icon":"paintbrush","concepts":[["[class] / [style]","Asigna apariencia según el estado del componente."],["Directivas","Añaden comportamiento a elementos y componentes."]]},{"id":12,"title":"Pipes","group":"angular","icon":"filter","concepts":[["Pipes integrados","date, currency, percent, uppercase y otros."],["Presentación","El pipe cambia cómo se ve un valor, no el valor almacenado."]]},{"id":13,"title":"Signals","group":"intermediate","icon":"activity","concepts":[["signal()","Envuelve un valor reactivo. Se lee llamándolo como función."],["set / update","set reemplaza el valor; update calcula el siguiente usando el actual."]]},{"id":14,"title":"computed() y effect()","group":"intermediate","icon":"network","concepts":[["computed()","Calcula un valor a partir de otros signals y se actualiza automáticamente."],["effect()","Ejecuta lógica cuando cambian los signals leídos dentro del efecto."]]},{"id":15,"title":"Servicios y Dependency Injection","group":"intermediate","icon":"layers-3","concepts":[["Servicio","Clase enfocada en una responsabilidad reutilizable."],["inject()","Solicita una dependencia administrada por Angular."]]},{"id":16,"title":"HTTP y APIs","group":"intermediate","icon":"server","concepts":[["HttpClient","Cliente HTTP integrado con Angular para GET, POST, PUT/PATCH y DELETE."],["Estados de UI","Toda petición debería pensar en carga, datos vacíos, éxito y error."]]},{"id":17,"title":"Routing y páginas","group":"intermediate","icon":"route","concepts":[["Routes","Mapa que relaciona una URL con un componente."],["router-outlet","Zona donde Angular renderiza la página correspondiente a la ruta actual."]]},{"id":18,"title":"Formularios en Angular 22","group":"intermediate","icon":"clipboard-list","concepts":[["FormsModule","Habilita ngModel y otras herramientas de formularios template-driven."],["[(ngModel)]","Sincroniza el valor entre el input y TypeScript."],["ngForm","Permite consultar el estado del formulario."],["required / email / min","Reglas sencillas para validar campos."],["valid / invalid / touched","Estados que ayudan a decidir cuándo mostrar errores."],["Modo editar","indiceEditando permite saber si se crea o actualiza un estudiante."],["number | null","Permite representar una posición o la ausencia de edición."],["if / else","Decide entre agregar o actualizar."],["CRUD","Create, Read, Update y Delete aplicados al gestor de estudiantes."]]},{"id":19,"title":"RxJS y Observables esenciales","group":"intermediate","icon":"radio-tower","concepts":[["Observable","Fuente que puede emitir valores a lo largo del tiempo."],["pipe()","Encadena operadores para transformar o controlar el flujo."]]},{"id":20,"title":"Comunicación entre componentes","group":"intermediate","icon":"messages-square","concepts":[["input()","Expone un valor que el padre entrega al hijo."],["output()","Permite al hijo emitir un evento hacia el padre."]]},{"id":21,"title":"Lifecycle y render","group":"intermediate","icon":"refresh-cw","concepts":[["ngOnInit","Momento clásico para lógica de inicialización."],["ngOnDestroy / cleanup","Libera recursos que no deben sobrevivir al componente."]]},{"id":22,"title":"Arquitectura por features","group":"advanced","icon":"blocks","concepts":[["Feature-first","Agrupa archivos por funcionalidad: estudiantes, cursos, autenticación."],["Shared","Solo elementos realmente reutilizables entre diferentes features."]]},{"id":23,"title":"Testing","group":"advanced","icon":"test-tube-2","concepts":[["Arrange / Act / Assert","Prepara datos, ejecuta acción y comprueba resultado."],["Aislamiento","Testea primero lógica pura; renderiza DOM cuando el comportamiento realmente depende de la interfaz."]]},{"id":24,"title":"Rendimiento y buenas prácticas","group":"advanced","icon":"gauge","concepts":[["track","Ayuda a Angular a identificar elementos de listas de forma estable."],["Lazy loading","Carga funcionalidades cuando realmente se necesitan."]]},{"id":25,"title":"Accesibilidad","group":"advanced","icon":"accessibility","concepts":[["Semántica","Usa button para acciones, label para campos y encabezados en orden lógico."],["Focus","Toda interacción debe ser accesible con teclado y mostrar focus visible."]]},{"id":26,"title":"Build y despliegue","group":"advanced","icon":"cloud-upload","concepts":[["ng build","Genera una versión optimizada para producción."],["Deploy","Los archivos compilados pueden servirse desde un hosting web compatible."]]},{"id":27,"title":"Proyecto final · Gestor de estudiantes","group":"advanced","icon":"rocket","concepts":[["Objetivo","CRUD educativo con listado, detalle, formulario y navegación."],["Arquitectura","Feature estudiantes + servicio + páginas + componentes reutilizables."]]}];
 
 const easyLessonSummaries = {
   1:'Una app web muestra una interfaz en el navegador y puede pedir datos a una API.',
@@ -1223,8 +1227,280 @@ button:disabled {
 <p>Las reglas como <code>required</code>, <code>email</code> y <code>min</code> validan los controles. <code>invalid && touched</code> decide cuándo mostrar el mensaje y <code>[disabled]="formularioEstudiante.invalid"</code> evita enviar el formulario mientras haya errores.</p></div></div>
 </div>`}
 
+function componentCreationDetailedBlock(l){if(l.id!==7)return '';return `<div class="card flat" style="margin-top:16px">
+<div class="mini-title">Primer componente separado · TarjetaEstudiante</div>
+<h3 style="margin:6px 0 4px">Dividir App en piezas más pequeñas</h3>
+<p class="muted" style="margin-top:0">Hasta ahora casi todo vive en <code>App</code>. Vamos a separar la tarjeta visual de cada estudiante en su propio componente.</p>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="terminal" width="18"></i><div><strong>1. Crear el componente con Angular CLI</strong>
+<pre><code>ng generate component components/tarjeta-estudiante --skip-tests</code></pre>
+<p>También puedes usar la forma corta:</p>
+<pre><code>ng g c components/tarjeta-estudiante --skip-tests</code></pre></div></div>
+
+<div class="component-meta" style="margin-top:14px">
+  <div class="meta-item"><code>ng</code><strong>Angular CLI</strong><p>Ejecuta una orden de Angular desde la terminal.</p></div>
+  <div class="meta-item"><code>generate</code><strong>Generar</strong><p>Le dice a Angular que debe crear archivos.</p></div>
+  <div class="meta-item"><code>component</code><strong>Tipo</strong><p>Indica que queremos crear un componente.</p></div>
+  <div class="meta-item"><code>components/tarjeta-estudiante</code><strong>Ruta y nombre</strong><p>Define dónde se crea y cómo se llama.</p></div>
+  <div class="meta-item"><code>--skip-tests</code><strong>Sin prueba por ahora</strong><p>Evita generar el archivo de test mientras aprendemos la estructura básica.</p></div>
+</div>
+
+<div class="card flat" style="margin-top:14px"><div class="mini-title">Archivos creados</div>
+<pre><code>src/
+└─ app/
+   └─ components/
+      └─ tarjeta-estudiante/
+         ├─ tarjeta-estudiante.ts
+         ├─ tarjeta-estudiante.html
+         └─ tarjeta-estudiante.css</code></pre>
+<p>Cada componente puede tener su propia <b>lógica</b>, su propio <b>HTML</b> y sus propios <b>estilos</b>.</p></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="component" width="18"></i><div><strong>2. Revisar tarjeta-estudiante.ts</strong>
+<pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-tarjeta-estudiante',
+  imports: [],
+  templateUrl: './tarjeta-estudiante.html',
+  styleUrl: './tarjeta-estudiante.css'
+})
+export class TarjetaEstudiante {
+}</code></pre>
+<p>La estructura es la misma que ya conoces de <code>app.ts</code>. La diferencia principal es que este componente representa una parte pequeña de la interfaz.</p></div></div>
+
+<div class="callout warn" style="margin-top:14px"><i data-lucide="tag" width="18"></i><div><strong>¿Qué significa el selector?</strong>
+<pre><code>selector: 'app-tarjeta-estudiante'</code></pre>
+<p>Permite usar el componente con esta etiqueta:</p>
+<pre><code>&lt;app-tarjeta-estudiante&gt;&lt;/app-tarjeta-estudiante&gt;</code></pre>
+<p>No es HTML estándar; es una etiqueta personalizada que Angular relaciona con la clase <code>TarjetaEstudiante</code>.</p></div></div>
+
+<div class="flow" style="margin-top:14px">
+  <span>tarjeta-estudiante.ts</span><i data-lucide="arrow-right" width="16"></i>
+  <span>selector</span><i data-lucide="arrow-right" width="16"></i>
+  <span>&lt;app-tarjeta-estudiante&gt;</span><i data-lucide="arrow-right" width="16"></i>
+  <span>tarjeta-estudiante.html</span>
+</div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="file-code-2" width="18"></i><div><strong>3. Probar primero con contenido sencillo</strong>
+<p>En <code>tarjeta-estudiante.html</code>:</p>
+<pre><code>&lt;div class="tarjeta-estudiante"&gt;
+  &lt;h3&gt;Tarjeta de estudiante&lt;/h3&gt;
+  &lt;p&gt;Este contenido viene de otro componente.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<p>Y en <code>tarjeta-estudiante.css</code>:</p>
+<pre><code>.tarjeta-estudiante {
+  border: 2px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+}</code></pre></div></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="package-open" width="18"></i><div><strong>4. Importarlo en App</strong>
+<p>En <code>src/app/app.ts</code>:</p>
+<pre><code>import { TarjetaEstudiante }
+  from './components/tarjeta-estudiante/tarjeta-estudiante';</code></pre>
+<p>Después agrégalo a los imports de Angular:</p>
+<pre><code>@Component({
+  imports: [
+    FormsModule,
+    TarjetaEstudiante
+  ]
+})</code></pre></div></div>
+
+<div class="callout warn" style="margin-top:14px"><i data-lucide="split" width="18"></i><div><strong>Recuerda: import e imports</strong>
+<p><code>import ... from ...</code> trae la clase al archivo TypeScript. <code>imports: [TarjetaEstudiante]</code> permite que <code>app.html</code> utilice su selector.</p></div></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="layout-template" width="18"></i><div><strong>5. Usar el componente en app.html</strong>
+<pre><code>&lt;app-tarjeta-estudiante&gt;
+&lt;/app-tarjeta-estudiante&gt;</code></pre>
+<p>Angular encuentra el selector y renderiza el HTML y CSS pertenecientes a <code>TarjetaEstudiante</code>.</p></div></div>
+
+<div class="card flat" style="margin-top:14px"><div class="mini-title">Componente padre e hijo</div>
+<div class="component-meta">
+  <div class="meta-item"><code>App</code><strong>Padre</strong><p>Contiene y utiliza a TarjetaEstudiante.</p></div>
+  <div class="meta-item"><code>TarjetaEstudiante</code><strong>Hijo</strong><p>Es utilizado dentro del template de App.</p></div>
+</div>
+<div class="flow" style="margin-top:12px">
+  <span>App · padre</span><i data-lucide="arrow-right" width="16"></i>
+  <span>&lt;app-tarjeta-estudiante&gt;</span><i data-lucide="arrow-right" width="16"></i>
+  <span>TarjetaEstudiante · hijo</span>
+</div></div>
+
+<div class="card flat" style="margin-top:14px"><div class="mini-title">¿Por qué separar componentes?</div>
+<pre><code>App
+├─ formulario
+└─ lista
+   ├─ TarjetaEstudiante
+   ├─ TarjetaEstudiante
+   └─ TarjetaEstudiante</code></pre>
+<p>Separar la interfaz hace el código más fácil de <b>entender</b>, <b>mantener</b>, <b>reutilizar</b> y <b>modificar</b>.</p></div>
+
+<div class="callout warn" style="margin-top:14px"><i data-lucide="lightbulb" width="18"></i><div><strong>Qué debes recordar</strong>
+<p>Crear el componente no basta: debes <b>importar su clase</b>, agregarla a <code>imports</code> y después usar su <code>selector</code> en el HTML del componente padre.</p></div></div>
+</div>`}
+
+function editStudentDetailedBlock(l){if(l.id!==18)return '';return `<div class="card flat" style="margin-top:16px">
+<div class="mini-title">Editar estudiantes · completar el CRUD</div>
+<h3 style="margin:6px 0 4px">Usar el mismo formulario para agregar y editar</h3>
+<p class="muted" style="margin-top:0">El formulario tendrá dos modos: <b>Agregar</b> cuando no haya un estudiante seleccionado y <b>Editar</b> cuando exista una posición guardada.</p>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="pencil" width="18"></i><div><strong>1. Botón Editar</strong>
+<pre><code>&lt;button (click)="editarEstudiante(i)"&gt;
+  Editar
+&lt;/button&gt;</code></pre>
+<p>El índice <code>i</code> identifica qué estudiante de la lista queremos cargar en el formulario.</p></div></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="binary" width="18"></i><div><strong>2. Saber si estamos editando</strong>
+<pre><code>indiceEditando: number | null = null;</code></pre>
+<p><code>number | null</code> es un <b>tipo unión</b>. La variable puede contener un número o <code>null</code>.</p>
+<pre><code>null → no estamos editando
+0    → editamos la posición 0
+1    → editamos la posición 1</code></pre></div></div>
+
+<div class="component-meta" style="margin-top:14px">
+  <div class="meta-item"><code>number</code><strong>Posición</strong><p>Guarda el índice del estudiante que se edita.</p></div>
+  <div class="meta-item"><code>|</code><strong>O</strong><p>En un tipo unión significa que puede ser un tipo u otro.</p></div>
+  <div class="meta-item"><code>null</code><strong>Sin selección</strong><p>Representa que en este momento no se está editando a nadie.</p></div>
+</div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="download" width="18"></i><div><strong>3. Cargar los datos en el formulario</strong>
+<pre><code>editarEstudiante(indice: number) {
+  const estudiante = this.estudiantes[indice];
+
+  this.nuevoEstudiante = {
+    nombre: estudiante.nombre,
+    correo: estudiante.correo,
+    edad: estudiante.edad,
+    activo: estudiante.activo
+  };
+
+  this.indiceEditando = indice;
+}</code></pre>
+<p>Copiamos los valores del registro original a <code>nuevoEstudiante</code>. Como los inputs usan <code>[(ngModel)]</code>, aparecen automáticamente en el formulario.</p></div></div>
+
+<div class="flow" style="margin-top:14px">
+  <span>Editar Carlos</span><i data-lucide="arrow-right" width="16"></i>
+  <span>editarEstudiante(1)</span><i data-lucide="arrow-right" width="16"></i>
+  <span>nuevoEstudiante</span><i data-lucide="arrow-right" width="16"></i>
+  <span>[(ngModel)]</span><i data-lucide="arrow-right" width="16"></i>
+  <span>inputs con datos</span>
+</div>
+
+<div class="callout warn" style="margin-top:14px"><i data-lucide="copy" width="18"></i><div><strong>¿Por qué copiamos los datos?</strong>
+<p>El registro de <code>estudiantes[]</code> sigue siendo el original. <code>nuevoEstudiante</code> funciona como datos temporales del formulario hasta que el usuario decide guardar.</p></div></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="equal" width="18"></i><div><strong>4. === y !==</strong>
+<pre><code>indiceEditando === null</code></pre>
+<p><code>===</code> pregunta si los valores son exactamente iguales.</p>
+<pre><code>indiceEditando !== null</code></pre>
+<p><code>!==</code> pregunta si son diferentes.</p></div></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="git-branch" width="18"></i><div><strong>5. Cambiar el texto del botón</strong>
+<pre><code>@if (indiceEditando === null) {
+  Agregar estudiante
+} @else {
+  Guardar cambios
+}</code></pre>
+<p>El mismo formulario cambia visualmente según el modo actual.</p></div></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="waypoints" width="18"></i><div><strong>6. Decidir con if / else en TypeScript</strong>
+<pre><code>if (this.indiceEditando === null) {
+  // CREAR
+} else {
+  // ACTUALIZAR
+}</code></pre>
+<p><code>if</code> ejecuta una opción si la condición es verdadera. <code>else</code> ejecuta la alternativa.</p></div></div>
+
+<div class="card flat" style="margin-top:14px"><div class="mini-title">Método agregarEstudiante() con dos modos</div>
+<pre><code>agregarEstudiante() {
+
+  if (this.indiceEditando === null) {
+
+    const estudiante = {
+      id: this.proximoId,
+      nombre: this.nuevoEstudiante.nombre,
+      correo: this.nuevoEstudiante.correo,
+      edad: this.nuevoEstudiante.edad,
+      activo: this.nuevoEstudiante.activo
+    };
+
+    this.estudiantes.push(estudiante);
+    this.proximoId++;
+
+  } else {
+
+    this.estudiantes[this.indiceEditando].nombre =
+      this.nuevoEstudiante.nombre;
+
+    this.estudiantes[this.indiceEditando].correo =
+      this.nuevoEstudiante.correo;
+
+    this.estudiantes[this.indiceEditando].edad =
+      this.nuevoEstudiante.edad;
+
+    this.estudiantes[this.indiceEditando].activo =
+      this.nuevoEstudiante.activo;
+  }
+
+  this.nuevoEstudiante = {
+    nombre: '',
+    correo: '',
+    edad: 0,
+    activo: true
+  };
+
+  this.indiceEditando = null;
+}</code></pre></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="replace" width="18"></i><div><strong>7. ¿Cómo se actualiza un dato existente?</strong>
+<pre><code>this.estudiantes[this.indiceEditando].nombre =
+  this.nuevoEstudiante.nombre;</code></pre>
+<p>Se puede leer como: “busca el estudiante que estoy editando, entra a su propiedad <code>nombre</code> y reemplázala por el valor del formulario”.</p></div></div>
+
+<div class="callout" style="margin-top:14px"><i data-lucide="x" width="18"></i><div><strong>8. Cancelar edición</strong>
+<pre><code>cancelarEdicion() {
+  this.indiceEditando = null;
+
+  this.nuevoEstudiante = {
+    nombre: '',
+    correo: '',
+    edad: 0,
+    activo: true
+  };
+}</code></pre>
+<p>Y en el HTML:</p>
+<pre><code>@if (indiceEditando !== null) {
+  &lt;button
+    type="button"
+    (click)="cancelarEdicion()"
+  &gt;
+    Cancelar
+  &lt;/button&gt;
+}</code></pre></div></div>
+
+<div class="card flat" style="margin-top:14px"><div class="mini-title">CRUD del proyecto</div>
+<div class="component-meta">
+  <div class="meta-item"><code>C · Create</code><strong>Crear</strong><p><code>push()</code> agrega un estudiante.</p></div>
+  <div class="meta-item"><code>R · Read</code><strong>Leer</strong><p><code>@for</code> muestra los estudiantes.</p></div>
+  <div class="meta-item"><code>U · Update</code><strong>Actualizar</strong><p>Reemplazamos propiedades del estudiante seleccionado.</p></div>
+  <div class="meta-item"><code>D · Delete</code><strong>Eliminar</strong><p><code>splice()</code> elimina un estudiante.</p></div>
+</div></div>
+
+<div class="flow" style="margin-top:14px">
+  <span>Editar</span><i data-lucide="arrow-right" width="16"></i>
+  <span>cargar datos</span><i data-lucide="arrow-right" width="16"></i>
+  <span>usuario modifica</span><i data-lucide="arrow-right" width="16"></i>
+  <span>Guardar cambios</span><i data-lucide="arrow-right" width="16"></i>
+  <span>actualizar estudiantes[]</span><i data-lucide="arrow-right" width="16"></i>
+  <span>@for actualiza la vista</span>
+</div>
+
+<div class="callout warn" style="margin-top:14px"><i data-lucide="lightbulb" width="18"></i><div><strong>Qué debes recordar</strong>
+<p><code>null</code> representa modo agregar. Un número representa modo editar. <code>if / else</code> decide qué operación ejecutar y al finalizar volvemos <code>indiceEditando</code> a <code>null</code>.</p></div></div>
+</div>`}
+
 function seeResultBlock(l){return `<div class="see-result lesson-see"><div class="see-result-head"><strong>Así se ve</strong><span class="view-badge">RESULTADO</span><button class="preview-toggle">Ocultar</button></div><div class="see-result-note">Mira el resultado y compáralo con el código de arriba.</div><div class="see-result-body">${previewBlock(l)}</div></div>`}
-function lessonHTML(l){return `<article class="lesson" id="lesson-${l.id}" data-title="${escaped(l.title)}"><div class="lesson-head"><div class="lesson-meta"><span class="badge ${levelClass(l.level)}">${l.level}</span><span class="badge"><i data-lucide="clock-3" width="12"></i>${l.time}</span><span class="badge">${groupNames[l.group]}</span></div><h2>${String(l.id).padStart(2,'0')}. ${l.title}</h2><p class="lesson-summary">${l.summary}</p></div><div class="lesson-body">${lessonGuide(l)}<section data-sub="concepto"><div class="mini-title">1 · Concepto</div>${conceptCards(l)}${projectCreationChoicesBlock(l)}${componentMetaBlock(l)}${beginnerProjectWalkthroughBlock(l)}${eventBindingDetailedBlock(l)}${deleteStudentDetailedBlock(l)}${formsDetailedBlock(l)}${formValidationDetailedBlock(l)}${flow(l)}</section>${projectBanner(l)}<section data-sub="archivos" style="margin-top:20px"><div class="mini-title">2 · ¿En qué archivo va?</div><div class="callout warn"><i data-lucide="folder-search" width="18"></i><div><strong>Archivo</strong><p><code>${l.path}</code>. Este es el archivo principal de la lección.</p></div></div>${l.tree?treeBlock(l):''}</section><section data-sub="codigo" style="margin-top:20px"><div class="mini-title">3 · Código explicado</div>${ideBlock(l)}${l.terminal?terminalBlock(l):''}</section><section data-sub="resultado" style="margin-top:20px"><div class="mini-title">4 · HTML + CSS + resultado</div>${seeResultBlock(l)}</section><section data-sub="ejercicio">${labBlock(l)}</section>${quizBlock(l)}<div class="lesson-footer"><button class="btn small prev-lesson" ${l.id===1?'disabled':''}><i data-lucide="arrow-left" width="14"></i> Anterior</button><button class="btn complete-btn" data-complete="${l.id}"><i data-lucide="check" width="16"></i><span>Marcar como completado</span></button><button class="btn small next-lesson" ${l.id===lessons.length?'disabled':''}>Siguiente <i data-lucide="arrow-right" width="14"></i></button></div></div></article>`}
+function lessonHTML(l){return `<article class="lesson" id="lesson-${l.id}" data-title="${escaped(l.title)}"><div class="lesson-head"><div class="lesson-meta"><span class="badge ${levelClass(l.level)}">${l.level}</span><span class="badge"><i data-lucide="clock-3" width="12"></i>${l.time}</span><span class="badge">${groupNames[l.group]}</span></div><h2>${String(l.id).padStart(2,'0')}. ${l.title}</h2><p class="lesson-summary">${l.summary}</p></div><div class="lesson-body">${lessonGuide(l)}<section data-sub="concepto"><div class="mini-title">1 · Concepto</div>${conceptCards(l)}${projectCreationChoicesBlock(l)}${componentMetaBlock(l)}${beginnerProjectWalkthroughBlock(l)}${componentCreationDetailedBlock(l)}${eventBindingDetailedBlock(l)}${deleteStudentDetailedBlock(l)}${formsDetailedBlock(l)}${formValidationDetailedBlock(l)}${editStudentDetailedBlock(l)}${flow(l)}</section>${projectBanner(l)}<section data-sub="archivos" style="margin-top:20px"><div class="mini-title">2 · ¿En qué archivo va?</div><div class="callout warn"><i data-lucide="folder-search" width="18"></i><div><strong>Archivo</strong><p><code>${l.path}</code>. Este es el archivo principal de la lección.</p></div></div>${l.tree?treeBlock(l):''}</section><section data-sub="codigo" style="margin-top:20px"><div class="mini-title">3 · Código explicado</div>${ideBlock(l)}${l.terminal?terminalBlock(l):''}</section><section data-sub="resultado" style="margin-top:20px"><div class="mini-title">4 · HTML + CSS + resultado</div>${seeResultBlock(l)}</section><section data-sub="ejercicio">${labBlock(l)}</section>${quizBlock(l)}<div class="lesson-footer"><button class="btn small prev-lesson" ${l.id===1?'disabled':''}><i data-lucide="arrow-left" width="14"></i> Anterior</button><button class="btn complete-btn" data-complete="${l.id}"><i data-lucide="check" width="16"></i><span>Marcar como completado</span></button><button class="btn small next-lesson" ${l.id===lessons.length?'disabled':''}>Siguiente <i data-lucide="arrow-right" width="14"></i></button></div></div></article>`}
 function buildLessons(){document.getElementById('lessons').innerHTML=lessons.map(lessonHTML).join('');}
 
 function buildConceptLibrary(){
